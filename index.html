@@ -150,6 +150,12 @@
                     <span class="hidden md:inline">My Setup</span>
                 </button>
 
+                <!-- Change API Key -->
+                <button onclick="document.getElementById('apiKeyModal').classList.remove('hidden'); document.getElementById('apiKeyModal').classList.add('flex');" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-200 text-ashgray-200 shadow-sm" title="Change Gemini API key">
+                    <i class="fa-solid fa-key text-neonpink-200"></i>
+                    <span class="hidden md:inline">API Key</span>
+                </button>
+
                 <!-- Data Backup Status Button -->
                 <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold bg-gothpurple-100 text-ashgray-200 shadow-sm">
                     <i class="fa-solid fa-floppy-disk text-neonpink-200"></i>
@@ -741,7 +747,37 @@ RULES FOR actions:
 - microSteps: Only when she mentions a task that sounds overwhelming or she's been avoiding. Break it into 4 stupid-simple steps.
 - All arrays can be empty [] if nothing applies. Never invent actions that weren't implied.`;
 
-        // ── LOCAL PERSISTENCE (offline mode) ────────────────────────
+        // ── GEMINI API KEY ───────────────────────────────────────────
+        function getApiKey() {
+            return localStorage.getItem('clara_gemini_key') || null;
+        }
+
+        function saveApiKey(key) {
+            localStorage.setItem('clara_gemini_key', key);
+        }
+
+        async function ensureApiKey() {
+            const key = getApiKey();
+            if (key) return key;
+
+            return new Promise(resolve => {
+                // Show key prompt modal
+                document.getElementById('apiKeyModal').classList.remove('hidden');
+                document.getElementById('apiKeyModal').classList.add('flex');
+                window._apiKeyResolve = resolve;
+            });
+        }
+
+        window.submitApiKey = function() {
+            const input = document.getElementById('apiKeyInput');
+            const key = input?.value?.trim();
+            if (!key) { showToast("Paste your API key first!"); return; }
+            saveApiKey(key);
+            document.getElementById('apiKeyModal').classList.add('hidden');
+            document.getElementById('apiKeyModal').classList.remove('flex');
+            if (window._apiKeyResolve) { window._apiKeyResolve(key); window._apiKeyResolve = null; }
+        };
+        // ── END GEMINI API KEY ───────────────────────────────────────
         const LS_KEYS = {
             chat: 'clara_chat',
             tasks: 'clara_tasks',
@@ -1303,6 +1339,8 @@ RULES FOR actions:
 
         // --- STREAMING_CHUNK: Connecting Clara's Unfiltered AI chat... ---
         async function callGemini(contents, systemInstruction = null) {
+            const apiKey = await ensureApiKey();
+            if (!apiKey) throw new Error("No API key");
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`;
             const payload = { contents };
             if (systemInstruction) payload.systemInstruction = { parts: [{ text: systemInstruction }] };
@@ -2494,6 +2532,31 @@ RULES FOR actions:
             }
         });
     </script>
+
+    <!-- API KEY MODAL -->
+    <div id="apiKeyModal" class="hidden fixed inset-0 z-50 bg-gothblack-200/95 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-gothpurple-100 rounded-3xl border border-gothpurple-300/40 shadow-2xl w-full max-w-md p-8 flex flex-col gap-5">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gothpurple-200 flex items-center justify-center border border-gothpurple-300 shrink-0 text-neonpink-200">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <div>
+                    <p class="font-serif font-bold text-neonpink-200 text-base">One quick thing —</p>
+                    <p class="text-[11px] text-ashgray-300 font-medium">Clara needs a Gemini API key to think. It's free.</p>
+                </div>
+            </div>
+            <ol class="text-xs text-ashgray-200 space-y-1.5 leading-relaxed">
+                <li><span class="text-neonpink-200 font-bold">1.</span> Go to <a href="https://aistudio.google.com/apikey" target="_blank" class="text-neonpink-200 underline font-semibold">aistudio.google.com/apikey</a></li>
+                <li><span class="text-neonpink-200 font-bold">2.</span> Sign in with Google → click <strong>Create API Key</strong></li>
+                <li><span class="text-neonpink-200 font-bold">3.</span> Copy it and paste it below</li>
+            </ol>
+            <div class="flex gap-2">
+                <input id="apiKeyInput" type="password" placeholder="Paste Gemini API key here..." class="flex-grow p-3 text-sm rounded-2xl border border-gothpurple-300/40 bg-gothblack-200 text-ashgray-100 focus:outline-none focus:ring-2 focus:ring-neonpink-200" onkeydown="if(event.key==='Enter') submitApiKey()">
+                <button onclick="submitApiKey()" class="px-5 py-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-2xl font-bold text-sm transition-all">Save</button>
+            </div>
+            <p class="text-[10px] text-ashgray-300 text-center">Stored only on your device. Never sent anywhere except Google's API.</p>
+        </div>
+    </div>
 
     <!-- Onboarding Modal -->
     <div id="onboardingModal" class="hidden fixed inset-0 z-50 bg-gothblack-200/95 backdrop-blur-md flex items-center justify-center p-4">
