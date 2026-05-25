@@ -1340,10 +1340,10 @@ RULES FOR actions:
         }
 
         // --- STREAMING_CHUNK: Connecting Clara's Unfiltered AI chat... ---
-        async function callGemini(contents, systemInstruction = null) {
+        async function callGemini(contents, systemInstruction = null, retries = 2) {
             const apiKey = getApiKey();
             if (!apiKey) throw new Error("No API key");
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
             const payload = { contents };
             if (systemInstruction) payload.systemInstruction = { parts: [{ text: systemInstruction }] };
 
@@ -1352,8 +1352,14 @@ RULES FOR actions:
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
+
+            if (response.status === 429 && retries > 0) {
+                await new Promise(r => setTimeout(r, 3000));
+                return callGemini(contents, systemInstruction, retries - 1);
+            }
+
             if (response.ok) return await response.json();
-            throw new Error("System error.");
+            throw new Error(`API error ${response.status}`);
         }
 
         async function sendChatMessage(speakReply = false) {
@@ -1462,7 +1468,9 @@ RULES FOR actions:
 
             } catch (e) {
                 removeLoadingMessage(loadingId);
-                const errMsg = "Ah, my connections are offline. But I'm still listening. Go on.";
+                const errMsg = e.message?.includes('429')
+                    ? "Hit a rate limit — give me 10 seconds and try again."
+                    : "Something went wrong on my end. Try again in a sec.";
                 appendClaraMessage(errMsg);
                 if (speakReply || voiceModeActive) await speakAsClara(errMsg);
             }
