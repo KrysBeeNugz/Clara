@@ -1343,7 +1343,7 @@ RULES FOR actions:
         async function callGemini(contents, systemInstruction = null, retries = 3) {
             const apiKey = getApiKey();
             if (!apiKey) throw new Error("No API key");
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
             // Trim history to last 10 exchanges max to avoid token bloat
             const trimmed = contents.length > 20 ? contents.slice(-20) : contents;
