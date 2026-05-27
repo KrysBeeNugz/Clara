@@ -150,12 +150,6 @@
                     <span class="hidden md:inline">My Setup</span>
                 </button>
 
-                <!-- Change API Key -->
-                <button onclick="document.getElementById('apiKeyModal').classList.remove('hidden'); document.getElementById('apiKeyModal').classList.add('flex');" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-50">
-                    <i class="fa-solid fa-key text-neonpink-200"></i>
-                    <span class="hidden md:inline">API Key</span>
-                </button>
-
                 <!-- Data Backup Status Button -->
                 <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold bg-gothpurple-100 text-ashgray-200 shadow-sm">
                     <i class="fa-solid fa-floppy-disk text-neonpink-200"></i>
@@ -470,26 +464,6 @@
         </div>
     </main>
 
-    <!-- API KEY MODAL (CRUCIAL FIX) -->
-    <div id="apiKeyModal" class="fixed inset-0 bg-gothblack-200/80 backdrop-blur-sm z-50 items-center justify-center p-4 hidden transition-opacity">
-        <div class="bg-gothpurple-100 rounded-[32px] max-w-md w-full p-6 md:p-8 border border-gothpurple-300/40 shadow-2xl space-y-5">
-            <div class="flex justify-between items-center">
-                <h3 class="font-serif text-lg font-bold text-ashgray-50">Your Gemini API Key</h3>
-                <button onclick="document.getElementById('apiKeyModal').classList.add('hidden'); document.getElementById('apiKeyModal').classList.remove('flex');" class="text-ashgray-300 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            
-            <div class="space-y-3 text-xs">
-                <p class="text-ashgray-200 font-medium">Get your free Gemini API key from <a href="https://ai.google.dev" target="_blank" class="text-neonpink-200 hover:text-neonpink-100 underline">Google AI Studio</a>.</p>
-                <textarea id="apiKeyInput" placeholder="Paste your Gemini API key here..." class="w-full p-3 rounded-xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100 resize-none" rows="3"></textarea>
-                <p class="text-[10px] text-ashgray-300">Your key is saved locally. Never stored on servers. This stays between you and Google.</p>
-            </div>
-
-            <div class="flex gap-2 pt-2">
-                <button onclick="window.submitApiKey()" class="flex-grow py-3 px-4 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-full text-xs font-bold shadow-sm transition-all">Save & Close</button>
-                <button onclick="document.getElementById('apiKeyModal').classList.add('hidden'); document.getElementById('apiKeyModal').classList.remove('flex');" class="py-3 px-4 border border-gothpurple-300/40 text-ashgray-300 hover:text-white rounded-full text-xs font-bold transition-all">Cancel</button>
-            </div>
-        </div>
-    </div>
 
     <!-- ADD EVENT MODAL (TWO WEEK PLANNER) -->
     <div id="addEventModal" class="fixed inset-0 bg-gothblack-200/80 backdrop-blur-sm z-50 items-center justify-center p-4 hidden transition-opacity">
