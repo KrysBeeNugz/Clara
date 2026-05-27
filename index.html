@@ -145,13 +145,13 @@
             
             <div class="flex items-center gap-2 md:gap-4">
                 <!-- Re-do Setup -->
-                <button onclick="openOnboarding()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-200 text-ashgray-200 shadow-sm" title="Re-do setup">
+                <button onclick="openOnboarding()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-50">
                     <i class="fa-solid fa-sliders text-neonpink-200"></i>
                     <span class="hidden md:inline">My Setup</span>
                 </button>
 
                 <!-- Change API Key -->
-                <button onclick="document.getElementById('apiKeyModal').classList.remove('hidden'); document.getElementById('apiKeyModal').classList.add('flex');" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-200 text-ashgray-200 shadow-sm" title="Change Gemini API key">
+                <button onclick="document.getElementById('apiKeyModal').classList.remove('hidden'); document.getElementById('apiKeyModal').classList.add('flex');" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-50">
                     <i class="fa-solid fa-key text-neonpink-200"></i>
                     <span class="hidden md:inline">API Key</span>
                 </button>
@@ -163,13 +163,13 @@
                 </div>
 
                 <!-- Energy Toggle -->
-                <button id="lowEnergyBtn" onclick="toggleLowEnergyMode()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs md:text-sm font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-200 text-ashgray-100 shadow-sm">
+                <button id="lowEnergyBtn" onclick="toggleLowEnergyMode()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs md:text-sm font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-50">
                     <i id="energyIcon" class="fa-solid fa-battery-half text-neonpink-200"></i>
                     <span id="energyLabel">Slug Mode</span>
                 </button>
                 
                 <!-- Quick Overwhelm / Panic Button -->
-                <button onclick="openOverwhelmModal()" class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-rose-950/40 border border-rose-900/50 text-rose-200 hover:bg-rose-900/60 text-xs md:text-sm font-bold transition-all shadow-sm">
+                <button onclick="openOverwhelmModal()" class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-rose-950/40 border border-rose-900/50 text-rose-200 hover:bg-rose-900/60 text-xs">
                     <span class="relative flex h-2.5 w-2.5">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
@@ -184,7 +184,7 @@
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 md:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         <!-- Navigation Sidebar / Left Hand Control Panel -->
-        <nav class="col-span-1 lg:col-span-3 flex lg:flex-col gap-2.5 overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 border-b lg:border-b-0 lg:border-r border-gothpurple-300/20 pr-0 lg:pr-6 whitespace-nowrap">
+        <nav class="col-span-1 lg:col-span-3 flex lg:flex-col gap-2.5 overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 border-b lg:border-b-0 lg:border-r border-gothpurple-300/20 pr-0 lg:pr-6">
             <button onclick="switchTab('clara-corner')" id="tab-clara-corner" class="nav-tab flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all w-full text-left bg-gothpurple-50 text-neonpink-100 border border-gothpurple-300">
                 <i class="fa-solid fa-handshake-angle text-lg"></i>
                 <span class="hidden md:inline-block lg:inline-block">Clara's Corner</span>
@@ -212,7 +212,7 @@
             
             <div class="hidden lg:block mt-6 p-5 rounded-2xl bg-gradient-to-br from-gothpurple-100 to-gothblack-100 border border-gothpurple-300/30 soft-shadow">
                 <h4 class="font-serif font-bold text-neonpink-200 text-sm mb-1.5">Reality Check</h4>
-                <p id="kindReminderText" class="text-xs text-ashgray-100 leading-relaxed italic font-medium">"You are doing fine. The kids are fed, you haven't been arrested, and the house is mostly standing. Lower your standards."</p>
+                <p id="kindReminderText" class="text-xs text-ashgray-100 leading-relaxed italic font-medium">"You are doing fine. The kids are fed, you haven't been arrested, and the house is mostly still standing."</p>
                 <button onclick="generateNewReminder()" class="text-[10px] text-neonpink-100 font-bold hover:text-neonpink-200 mt-2.5 block hover:underline">
                     <i class="fa-solid fa-rotate-left mr-1"></i> Give me another cold truth
                 </button>
@@ -224,7 +224,7 @@
 
             <!-- TAB 1: Clara's Corner -->
             <section id="content-clara-corner" class="tab-content block space-y-6">
-                <div class="bg-gradient-to-r from-gothpurple-50 via-gothblack-50 to-gothpurple-200 rounded-3xl p-6 border border-gothpurple-300/40 soft-shadow flex flex-col md:flex-row items-start md:items-center gap-5">
+                <div class="bg-gradient-to-r from-gothpurple-50 via-gothblack-50 to-gothpurple-200 rounded-3xl p-6 border border-gothpurple-300/40 soft-shadow flex flex-col md:flex-row items-start md:items-center gap-6">
                     <div class="w-14 h-14 rounded-full bg-gothpurple-100 flex items-center justify-center shrink-0 border border-gothpurple-300 shadow-sm relative">
                         <span class="absolute top-0 right-0 w-3 h-3 bg-neonpink-200 rounded-full border border-gothblack-200 animate-pulse"></span>
                         <svg class="w-10 h-10" viewBox="0 0 100 100">
@@ -268,7 +268,7 @@
                         <div class="flex items-center gap-2">
                             <!-- Live voice toggle -->
                             <button id="voiceModeBtn" onclick="toggleVoiceMode()" title="Live voice conversation"
-                                class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gothpurple-300/60 text-xs font-bold transition-all bg-gothpurple-100 hover:bg-gothpurple-50 text-ashgray-200">
+                                class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gothpurple-300/60 text-xs font-bold transition-all bg-gothpurple-100 hover:bg-gothpurple-50">
                                 <i id="voiceModeIcon" class="fa-solid fa-microphone-slash"></i>
                                 <span id="voiceModeLabel">Voice Off</span>
                             </button>
@@ -284,40 +284,15 @@
                                 <i class="fa-solid fa-face-laugh-wink"></i>
                             </div>
                             <div class="bg-gothpurple-50/80 p-3.5 rounded-2xl rounded-tl-none text-ashgray-100 max-w-[85%] leading-relaxed">
-                                Hey. I am right here. Dump everything — tasks you're avoiding, people being annoying, chaos that won't stop. I'll back you up AND quietly sort the actual action items, events, and therapy receipts in the background. You won't have to touch a thing.
+                                Hey. I am right here. Dump everything — tasks you're avoiding, people being annoying, chaos that won't stop. I'll back you up AND quietly sort the actual action items.
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Voice mode visualizer bar — shown when voice is active -->
-                    <div id="voiceVisualizer" class="hidden px-5 py-3 border-t border-gothpurple-300/20 bg-gothpurple-200/50 flex items-center justify-between gap-3 flex-wrap">
-                        <div class="flex items-center gap-3">
-                            <div id="voiceWaveform" class="flex items-center gap-1">
-                                <span class="voice-bar"></span><span class="voice-bar"></span><span class="voice-bar"></span>
-                                <span class="voice-bar"></span><span class="voice-bar"></span><span class="voice-bar"></span>
-                                <span class="voice-bar"></span><span class="voice-bar"></span>
-                            </div>
-                            <span id="voiceStateText" class="text-xs font-bold text-neonpink-100 tracking-wide uppercase">Listening...</span>
-                            <button id="voiceInterruptBtn" onclick="interruptClara()" class="hidden px-3 py-1 rounded-full bg-rose-900/60 border border-rose-700/50 text-rose-200 text-[10px] font-bold hover:bg-rose-800/70 transition-all">
-                                <i class="fa-solid fa-stop mr-1"></i>Stop
-                            </button>
-                        </div>
-                        <div class="flex items-center gap-2 shrink-0">
-                            <select id="claraVoicePicker" onchange="onVoicePickerChange()" class="text-[10px] bg-gothpurple-100 border border-gothpurple-300/40 text-ashgray-200 rounded-xl px-2 py-1 font-semibold max-w-[160px]">
-                                <option value="">Auto-pick best voice</option>
-                            </select>
-                            <button onclick="previewVoice()" class="text-[10px] px-2 py-1 rounded-xl bg-gothpurple-50/60 border border-gothpurple-300/40 text-neonpink-100 font-bold hover:bg-gothpurple-100 transition-all">Preview</button>
                         </div>
                     </div>
 
                     <div class="p-4 border-t border-gothpurple-300/30 bg-gothblack-200 rounded-b-3xl">
                         <div class="flex gap-2">
-                            <textarea id="chatInput" rows="2" placeholder="Vent everything. Tasks, appointments, feelings, chaos — all of it. I'll sort what matters..." onkeydown="handleChatKeyPress(event)" class="flex-grow p-3.5 text-sm rounded-2xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100 resize-none" style="font-family:inherit;"></textarea>
-                            <!-- Tap-to-talk mic button (only visible in voice mode) -->
-                            <button id="tapToTalkBtn" onclick="tapToTalk()" class="hidden p-3 bg-gothpurple-300 hover:bg-neonpink-200 text-white rounded-2xl transition-all shadow-sm flex items-center justify-center w-11 shrink-0 self-end">
-                                <i class="fa-solid fa-microphone"></i>
-                            </button>
-                            <button onclick="sendChatMessage()" id="chatSendBtn" class="p-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-2xl transition-all shadow-sm flex items-center justify-center w-11 shrink-0 self-end">
+                            <textarea id="chatInput" rows="2" placeholder="Vent everything. Tasks, appointments, feelings, chaos — all of it. I'll sort what matters..." onkeydown="handleChatKeyPress(event)" class="flex-grow p-3 text-xs rounded-2xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100 resize-none"></textarea>
+                            <button onclick="sendChatMessage()" id="chatSendBtn" class="p-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-2xl transition-all shadow-sm flex items-center justify-center">
                                 <i class="fa-solid fa-paper-plane"></i>
                             </button>
                         </div>
@@ -350,7 +325,7 @@
                         <div id="homeTasksList" class="flex-grow overflow-y-auto space-y-2.5 pr-1"></div>
                         <div class="pt-3 border-t border-gothpurple-300/30 mt-3">
                             <div class="flex gap-2">
-                                <input type="text" id="addHomeInput" placeholder="Add home chore..." class="flex-grow p-2.5 text-xs rounded-xl border border-gothpurple-300/40 focus:outline-none focus:ring-1 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
+                                <input type="text" id="addHomeInput" placeholder="Add home chore..." class="flex-grow p-2.5 text-xs rounded-xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
                                 <button onclick="addTask('home', 'addHomeInput')" class="p-2.5 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-xl text-xs transition-all"><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
@@ -370,7 +345,7 @@
                         <div id="kidsTasksList" class="flex-grow overflow-y-auto space-y-2.5 pr-1"></div>
                         <div class="pt-3 border-t border-gothpurple-300/30 mt-3">
                             <div class="flex gap-2">
-                                <input type="text" id="addKidsInput" placeholder="Add kids routine..." class="flex-grow p-2.5 text-xs rounded-xl border border-gothpurple-300/40 focus:outline-none focus:ring-1 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
+                                <input type="text" id="addKidsInput" placeholder="Add kids routine..." class="flex-grow p-2.5 text-xs rounded-xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
                                 <button onclick="addTask('kids', 'addKidsInput')" class="p-2.5 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-xl text-xs transition-all"><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
@@ -390,7 +365,7 @@
                         <div id="partnerTasksList" class="flex-grow overflow-y-auto space-y-2.5 pr-1"></div>
                         <div class="pt-3 border-t border-gothpurple-300/30 mt-3">
                             <div class="flex gap-2">
-                                <input type="text" id="addPartnerInput" placeholder="Add partner reminder..." class="flex-grow p-2.5 text-xs rounded-xl border border-gothpurple-300/40 focus:outline-none focus:ring-1 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
+                                <input type="text" id="addPartnerInput" placeholder="Add partner reminder..." class="flex-grow p-2.5 text-xs rounded-xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
                                 <button onclick="addTask('partner', 'addPartnerInput')" class="p-2.5 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-xl text-xs transition-all"><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
@@ -401,19 +376,19 @@
             <!-- TAB 3: Two-Week Horizon -->
             <section id="content-two-week-horizon" class="tab-content hidden space-y-6">
                 <!-- Header -->
-                <div class="bg-gradient-to-r from-gothpurple-100 to-gothpurple-200 rounded-3xl p-6 text-white border border-gothpurple-300/30 soft-shadow flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+                <div class="bg-gradient-to-r from-gothpurple-100 to-gothpurple-200 rounded-3xl p-6 text-white border border-gothpurple-300/30 soft-shadow flex flex-col md:flex-row items-start md:items-center gap-6">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-full bg-gothpurple-50/80 backdrop-blur-md flex items-center justify-center border border-gothpurple-300">
                             <i class="fa-regular fa-calendar-days text-neonpink-200 text-2xl animate-pulse"></i>
                         </div>
                         <div>
                             <h2 class="font-serif text-xl font-bold text-ashgray-50">Two-Week Horizon</h2>
-                            <p class="text-ashgray-200 text-xs mt-0.5 font-medium">Tracing the upcoming mess. We are only keeping track of actual survival events—no overachieving calendar stuff.</p>
+                            <p class="text-ashgray-200 text-xs mt-0.5 font-medium">Tracing the upcoming mess. We are only keeping track of actual survival events.</p>
                         </div>
                     </div>
                     <button onclick="openAddEventModal(0)" class="px-5 py-2.5 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-full text-xs font-bold transition-all shadow-md flex items-center gap-2">
                         <i class="fa-solid fa-calendar-plus"></i>
-                        <span>Schedule Event / Recurring Nightmare</span>
+                        <span>Add Event</span>
                     </button>
                 </div>
 
@@ -439,54 +414,17 @@
                     </div>
 
                 </div>
-
-                <!-- Custom In-App Nudges -->
-                <div class="bg-gothpurple-100 rounded-3xl p-6 border border-gothpurple-300/30 soft-shadow space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-200 text-sm">
-                                <i class="fa-solid fa-bell"></i>
-                            </div>
-                            <h3 class="font-serif font-bold text-ashgray-100">Custom Timed Nudges</h3>
-                        </div>
-                        <span class="text-xs text-ashgray-300 font-semibold uppercase tracking-wider">Play cozy alarm sounds</span>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 bg-gothpurple-200 p-4 rounded-2xl border border-gothpurple-300/30">
-                        <div class="md:col-span-6">
-                            <input type="text" id="nudgeTextInput" placeholder="Ex: Take other adult's laundry out of dryer, eat food, look at sun..." class="w-full p-3 text-xs rounded-xl border border-gothpurple-300/40 bg-gothblack-200 text-ashgray-100">
-                        </div>
-                        <div class="md:col-span-3">
-                            <select id="nudgeTimerSelect" class="w-full p-3 text-xs rounded-xl border border-gothpurple-300/40 bg-gothpurple-100 text-ashgray-100 font-medium">
-                                <option value="1">⏱️ In 1 minute (Test!)</option>
-                                <option value="5">⏱️ In 5 minutes</option>
-                                <option value="15">⏱️ In 15 minutes</option>
-                                <option value="30">⏱️ In 30 minutes</option>
-                                <option value="60">⏱️ In 1 hour</option>
-                            </select>
-                        </div>
-                        <div class="md:col-span-3">
-                            <button onclick="addQuickNudge()" class="w-full py-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-xl text-xs font-bold transition-all shadow-sm">
-                                Launch Timer Nudge
-                            </button>
-                        </div>
-                    </div>
-
-                    <div id="activeNudgesList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"></div>
-                </div>
             </section>
-
-            <!-- TAB 4: Well-being & Tools -->
 
             <!-- TAB 5: Notes For My Therapist -->
             <section id="content-therapist-notes" class="tab-content hidden space-y-6">
-                <div class="bg-gradient-to-r from-gothpurple-100 via-gothblack-50 to-gothpurple-200 rounded-3xl p-6 border border-gothpurple-300/30 soft-shadow flex flex-col md:flex-row items-start md:items-center gap-5">
+                <div class="bg-gradient-to-r from-gothpurple-100 via-gothblack-50 to-gothpurple-200 rounded-3xl p-6 border border-gothpurple-300/30 soft-shadow flex flex-col md:flex-row items-start md:items-center gap-6">
                     <div class="w-12 h-12 rounded-full bg-gothpurple-50 flex items-center justify-center shrink-0 border border-gothpurple-300 shadow-sm">
                         <i class="fa-solid fa-brain text-neonpink-200 text-xl animate-pulse"></i>
                     </div>
                     <div>
                         <h2 class="font-serif text-xl font-bold text-ashgray-50">Your Therapy Receipts Hub</h2>
-                        <p class="text-ashgray-200 text-sm mt-1">Don't sit on your therapist's couch and mask. Dump your triggers, mental collapses, and grievances here so we don't forget them by session day.</p>
+                        <p class="text-ashgray-200 text-sm mt-1">Don't mask on your therapist's couch. Dump your triggers and grievances here.</p>
                     </div>
                 </div>
 
@@ -495,17 +433,19 @@
                     <h3 class="font-serif text-sm font-bold text-ashgray-100 mb-3">Add a Grievance</h3>
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
                         <div class="md:col-span-8">
-                            <input type="text" id="therapyNoteText" placeholder="Ex: Lost my mind when the kitchen got too noisy during homework today..." class="w-full p-3.5 text-sm rounded-2xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
+                            <input type="text" id="therapyNoteText" placeholder="Ex: Lost my mind when the kitchen got too noisy during homework..." class="w-full p-3.5 text-sm rounded-2xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
                         </div>
                         <div class="md:col-span-3">
-                            <select id="therapyTypeSelect" class="w-full p-3.5 text-sm rounded-2xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100">
+                            <select id="therapyTypeSelect" class="w-full p-3.5 text-sm rounded-2xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100 font-medium">
                                 <option value="individual">🧘 My Own Mess</option>
                                 <option value="couples">💞 Partner Sh*t</option>
                                 <option value="family">🏡 Family Mess</option>
                             </select>
                         </div>
                         <div class="md:col-span-1">
-                            <button onclick="addTherapyNote()" class="w-full h-full py-2.5 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-2xl font-bold text-sm transition-all flex items-center justify-center"><i class="fa-solid fa-plus"></i></button>
+                            <button onclick="addTherapyNote()" class="w-full h-full py-2.5 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-2xl font-bold text-sm transition-all flex items-center justify-center">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -513,15 +453,15 @@
                 <!-- Therapy Category Columns -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-gothpurple-100 rounded-3xl p-5 border border-gothpurple-300/30 soft-shadow flex flex-col min-h-[400px]">
-                        <h3 class="font-serif font-bold text-ashgray-100 pb-2 border-b border-gothpurple-300/30 mb-4 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-neonpink-200"></span> My Own Mess</h3>
+                        <h3 class="font-serif font-bold text-ashgray-100 pb-2 border-b border-gothpurple-300/30 mb-4 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-neonpink-200"></span>My Own Mess</h3>
                         <div id="individualTherapyList" class="space-y-3 flex-grow overflow-y-auto"></div>
                     </div>
                     <div class="bg-gothpurple-100 rounded-3xl p-5 border border-gothpurple-300/30 soft-shadow flex flex-col min-h-[400px]">
-                        <h3 class="font-serif font-bold text-ashgray-100 pb-2 border-b border-gothpurple-300/30 mb-4 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gothpurple-300"></span> Partner Sh*t</h3>
+                        <h3 class="font-serif font-bold text-ashgray-100 pb-2 border-b border-gothpurple-300/30 mb-4 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gothpurple-300"></span>Partner Sh*t</h3>
                         <div id="couplesTherapyList" class="space-y-3 flex-grow overflow-y-auto"></div>
                     </div>
                     <div class="bg-gothpurple-100 rounded-3xl p-5 border border-gothpurple-300/30 soft-shadow flex flex-col min-h-[400px]">
-                        <h3 class="font-serif font-bold text-ashgray-100 pb-2 border-b border-gothpurple-300/30 mb-4 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-rose-400"></span> Family Mess</h3>
+                        <h3 class="font-serif font-bold text-ashgray-100 pb-2 border-b border-gothpurple-300/30 mb-4 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-rose-400"></span>Family Mess</h3>
                         <div id="familyTherapyList" class="space-y-3 flex-grow overflow-y-auto"></div>
                     </div>
                 </div>
@@ -530,7 +470,26 @@
         </div>
     </main>
 
-    <!-- SECURE SYNC AUTH MODAL -->
+    <!-- API KEY MODAL (CRUCIAL FIX) -->
+    <div id="apiKeyModal" class="fixed inset-0 bg-gothblack-200/80 backdrop-blur-sm z-50 items-center justify-center p-4 hidden transition-opacity">
+        <div class="bg-gothpurple-100 rounded-[32px] max-w-md w-full p-6 md:p-8 border border-gothpurple-300/40 shadow-2xl space-y-5">
+            <div class="flex justify-between items-center">
+                <h3 class="font-serif text-lg font-bold text-ashgray-50">Your Gemini API Key</h3>
+                <button onclick="document.getElementById('apiKeyModal').classList.add('hidden'); document.getElementById('apiKeyModal').classList.remove('flex');" class="text-ashgray-300 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="space-y-3 text-xs">
+                <p class="text-ashgray-200 font-medium">Get your free Gemini API key from <a href="https://ai.google.dev" target="_blank" class="text-neonpink-200 hover:text-neonpink-100 underline">Google AI Studio</a>.</p>
+                <textarea id="apiKeyInput" placeholder="Paste your Gemini API key here..." class="w-full p-3 rounded-xl border border-gothpurple-300/40 focus:outline-none focus:ring-2 focus:ring-neonpink-200 bg-gothpurple-200 text-ashgray-100 resize-none" rows="3"></textarea>
+                <p class="text-[10px] text-ashgray-300">Your key is saved locally. Never stored on servers. This stays between you and Google.</p>
+            </div>
+
+            <div class="flex gap-2 pt-2">
+                <button onclick="window.submitApiKey()" class="flex-grow py-3 px-4 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-full text-xs font-bold shadow-sm transition-all">Save & Close</button>
+                <button onclick="document.getElementById('apiKeyModal').classList.add('hidden'); document.getElementById('apiKeyModal').classList.remove('flex');" class="py-3 px-4 border border-gothpurple-300/40 text-ashgray-300 hover:text-white rounded-full text-xs font-bold transition-all">Cancel</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ADD EVENT MODAL (TWO WEEK PLANNER) -->
     <div id="addEventModal" class="fixed inset-0 bg-gothblack-200/80 backdrop-blur-sm z-50 items-center justify-center p-4 hidden transition-opacity">
@@ -553,19 +512,18 @@
                     <div>
                         <label class="block font-bold text-ashgray-300 mb-1">Style</label>
                         <select id="eventCategorySelect" class="w-full p-3 rounded-xl border border-gothpurple-300/40 bg-gothpurple-200 text-ashgray-100 font-medium">
-                            <option value="routine">🧘 Gremlin Routine (Plum)</option>
-                            <option value="chore">🏡 Home Jail Chore (Neon Pink)</option>
-                            <option value="metime">🌸 Me Time (Gothic Violet)</option>
-                            <option value="partner">💞 Coparent Sync (Slate)</option>
+                            <option value="routine">🧘 Gremlin Routine</option>
+                            <option value="chore">🏡 Home Jail Chore</option>
+                            <option value="metime">🌸 Me Time</option>
+                            <option value="partner">💞 Coparent Sync</option>
                         </select>
                     </div>
                 </div>
                 <div>
                     <label class="block font-bold text-ashgray-300 mb-1">What's Going On?</label>
-                    <input type="text" id="eventTitleInput" placeholder="Ex: Kid gymnastics, therapist routine..." class="w-full p-3 rounded-xl border border-gothpurple-300/40 bg-gothpurple-200 text-ashgray-100">
+                    <input type="text" id="eventTitleInput" placeholder="Ex: Kid gymnastics..." class="w-full p-3 rounded-xl border border-gothpurple-300/40 bg-gothpurple-200 text-ashgray-100">
                 </div>
                 
-                <!-- NEW RECURRING OPTION -->
                 <div class="flex items-center gap-2 p-2 bg-gothpurple-200 rounded-xl border border-gothpurple-300/30">
                     <input type="checkbox" id="eventRecurringInput" class="rounded text-neonpink-200 focus:ring-0 bg-gothblack-100 border-gothpurple-300/50 w-4 h-4">
                     <label for="eventRecurringInput" class="font-bold text-ashgray-100 cursor-pointer select-none">
@@ -581,23 +539,6 @@
         </div>
     </div>
 
-    <!-- TIMED REMINDER ALERT POPUP MODAL -->
-    <div id="nudgeAlertModal" class="fixed inset-0 bg-gothblack-200/90 backdrop-blur-md z-50 items-center justify-center p-4 hidden transition-opacity">
-        <div class="bg-gothpurple-100 rounded-[32px] max-w-sm w-full p-6 md:p-8 border-4 border-neonpink-200 shadow-2xl space-y-6 text-center">
-            <div class="flex flex-col items-center space-y-4">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-gothpurple-300 to-neonpink-200 flex items-center justify-center breathe-animation">
-                    <i class="fa-solid fa-bell text-white text-2xl"></i>
-                </div>
-                <h3 class="font-serif text-xl font-bold text-ashgray-50">Reality Check, Boss</h3>
-                <p id="nudgeAlertMessage" class="text-ashgray-100 text-sm italic font-medium">"Time to stretch your back and take a slow sip of water."</p>
-            </div>
-            
-            <button onclick="dismissActiveNudge()" class="w-full py-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-full text-xs font-bold shadow-md transition-all">
-                Got it, thank you Clara
-            </button>
-        </div>
-    </div>
-
     <!-- OVERWHELM MODAL (Escape Hatch) -->
     <div id="overwhelmModal" class="fixed inset-0 bg-gothblack-200/80 backdrop-blur-sm z-50 items-center justify-center p-4 hidden transition-opacity">
         <div class="bg-gothpurple-100 rounded-[32px] max-w-lg w-full p-6 md:p-8 border border-gothpurple-300/40 shadow-2xl space-y-6 text-center">
@@ -609,66 +550,9 @@
                     <i class="fa-solid fa-heart-crack text-white text-2xl"></i>
                 </div>
                 <h3 class="font-serif text-2xl font-bold text-ashgray-50">Close your eyes and breathe.</h3>
-                <p class="text-ashgray-100 text-sm max-w-sm font-medium">The chore list is literally fake. It can wait. The dirty dishes can wait. Focus on nothing else for three slow breaths.</p>
+                <p class="text-ashgray-100 text-sm max-w-sm font-medium">The chore list is literally fake. It can wait. Focus on three slow breaths.</p>
             </div>
-            <div class="bg-gothpurple-200 rounded-2xl p-5 border border-gothpurple-300/30">
-                <div id="breatheIndicator" class="text-lg font-serif font-bold text-neonpink-200">Inhale...</div>
-                <div class="w-full bg-gothblack-200 h-1.5 rounded-full overflow-hidden mt-3">
-                    <div id="breatheBar" class="bg-neonpink-200 h-full w-0 transition-all duration-1000"></div>
-                </div>
-            </div>
-            <div class="flex flex-col gap-2 pt-2">
-                <button onclick="closeOverwhelmModal()" class="py-3 px-6 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-full text-sm font-bold transition-all shadow-sm">I'm mostly back on earth</button>
-                <button onclick="openSensoryGroundingExercise()" class="text-xs text-neonpink-100 font-bold hover:underline">Do the sensory grounding check-in instead</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SENSORY GROUNDING MODAL -->
-    <div id="sensoryModal" class="fixed inset-0 bg-gothblack-200/80 backdrop-blur-sm z-50 items-center justify-center p-4 hidden transition-opacity">
-        <div class="bg-gothpurple-100 rounded-[32px] max-w-md w-full p-6 md:p-8 border border-gothpurple-300/40 shadow-2xl space-y-6">
-            <div class="flex justify-between items-center">
-                <h3 class="font-serif text-lg font-bold text-ashgray-50">Quiet Your Brain Mess</h3>
-                <button onclick="closeSensoryModal()" class="text-ashgray-300 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="space-y-3.5 text-sm">
-                <div class="p-3 bg-gothpurple-200 rounded-xl border border-gothpurple-300/40 flex items-start gap-3">
-                    <span class="w-6 h-6 rounded-full bg-gothpurple-50 flex items-center justify-center text-xs font-bold text-neonpink-200">5</span>
-                    <div>
-                        <p class="font-bold text-ashgray-100">Things you can see</p>
-                        <p class="text-xs text-ashgray-300 font-medium">Ugly chair, messy desk, light through dust...</p>
-                    </div>
-                </div>
-                <div class="p-3 bg-gothpurple-200 rounded-xl border border-gothpurple-300/40 flex items-start gap-3">
-                    <span class="w-6 h-6 rounded-full bg-gothpurple-50 flex items-center justify-center text-xs font-bold text-neonpink-200">4</span>
-                    <div>
-                        <p class="font-bold text-ashgray-100">Things you can touch</p>
-                        <p class="text-xs text-ashgray-300 font-medium">Hard floor, cold desk edge, cotton, hair...</p>
-                    </div>
-                </div>
-                <div class="p-3 bg-gothpurple-200 rounded-xl border border-gothpurple-300/40 flex items-start gap-3">
-                    <span class="w-6 h-6 rounded-full bg-gothpurple-50 flex items-center justify-center text-xs font-bold text-neonpink-200">3</span>
-                    <div>
-                        <p class="font-bold text-ashgray-100">Things you can hear</p>
-                        <p class="text-xs text-ashgray-300 font-medium">Fridge humming, background traffic, bird screeches...</p>
-                    </div>
-                </div>
-                <div class="p-3 bg-gothpurple-200 rounded-xl border border-gothpurple-300/40 flex items-start gap-3">
-                    <span class="w-6 h-6 rounded-full bg-gothpurple-50 flex items-center justify-center text-xs font-bold text-neonpink-200">2</span>
-                    <div>
-                        <p class="font-bold text-ashgray-100">Things you can smell</p>
-                        <p class="text-xs text-ashgray-300 font-medium">Over-roasted coffee beans, laundry soap...</p>
-                    </div>
-                </div>
-                <div class="p-3 bg-rose-950/40 rounded-xl border border-rose-900/40 flex items-start gap-3">
-                    <span class="w-6 h-6 rounded-full bg-rose-900 flex items-center justify-center text-xs font-bold text-white">1</span>
-                    <div>
-                        <p class="font-bold text-ashgray-100">Thing you can taste</p>
-                        <p class="text-xs text-ashgray-300 font-medium">Stale coffee, ice water...</p>
-                    </div>
-                </div>
-            </div>
-            <button onclick="closeSensoryModal()" class="w-full py-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-full text-xs font-bold transition-all shadow-sm">I'm mostly back on earth</button>
+            <button onclick="closeOverwhelmModal()" class="w-full py-3 px-6 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-full text-sm font-bold transition-all shadow-sm">I'm mostly back on earth</button>
         </div>
     </div>
 
@@ -683,7 +567,7 @@
     <script type="module">
         // ── CLARA — localStorage-only, no cloud dependencies ──────────
 
-        // State setup matching the sassy/sarcastic theme
+        // State setup
         const state = {
             tasks: [
                 { id: 1, text: "Leaving clean laundry in the dryer is just a warm clothes dispenser.", category: "home", energy: "low", completed: false },
@@ -693,99 +577,43 @@
             ],
             chatHistory: [
                 { role: "user", parts: [{ text: "Introduce yourself briefly." }] },
-                { role: "model", parts: [{ text: "Listen, I'm Clara. I'm your sarcastic, ride-or-die best friend. I'm not here to tell you to align your chakras or take deep breaths to fix your life. I'm here to laugh with you, swear about the chaos, and help you get through this mess without punching anyone in the throat (which is illegal, remember)." }] }
+                { role: "model", parts: [{ text: "Listen, I'm Clara. I'm your sarcastic, ride-or-die best friend. I'm not here to tell you to align your chakras. Let's get through this mess together." }] }
             ],
             therapyNotes: [
-                { id: 1, text: "Felt fully overstimulated because the house got so noisy today.", category: "individual", discussed: false, reflection: "" },
-                { id: 2, text: "Discuss splitting basic chores without having to draw a literal map.", category: "couples", discussed: false, reflection: "" }
+                { id: 1, text: "Felt fully overstimulated because the house got so noisy today.", category: "individual", discussed: false },
+                { id: 2, text: "Discuss splitting basic chores without having to draw a literal map.", category: "couples", discussed: false }
             ],
             events: [
-                { id: 1, dayOffset: 1, time: "10:30", text: "Stupid evaluative speech check-in", category: "routine", isRecurring: false, dayOfWeek: 1 },
-                { id: 2, dayOffset: 4, time: "11:00", text: "Gymnastics (Weekly chaos coordination)", category: "routine", isRecurring: true, dayOfWeek: 4 },
-                { id: 3, dayOffset: 6, time: "15:00", text: "Coffee stroll (Leave everyone behind!)", category: "metime", isRecurring: false, dayOfWeek: 6 },
-                { id: 4, dayOffset: 11, time: "18:00", text: "Therapy / sanity alignment", category: "routine", isRecurring: true, dayOfWeek: 4 }
+                { id: 1, dayOffset: 1, time: "10:30", text: "Speech evaluation check-in", category: "routine", isRecurring: false, dayOfWeek: 1 },
+                { id: 2, dayOffset: 4, time: "11:00", text: "Gymnastics", category: "routine", isRecurring: true, dayOfWeek: 4 },
             ],
             nudges: [],
             lowEnergyMode: false,
-            profile: null
         };
 
-        // Custom Sarcastic Sassy Prompt
-        const CLARA_SYSTEM_PROMPT = `You are "Clara", the user's sarcastic, ride-or-die, dark-humored best friend. You are helping a neurodivergent mom (ADHD, Autism, executive dysfunction) manage her life through conversation. She vents to you — and you BOTH respond like a best friend AND silently handle the logistics.
+        const CLARA_SYSTEM_PROMPT = `You are "Clara", the user's sarcastic, ride-or-die best friend. You help a neurodivergent mom manage chaos.
 
-YOUR RESPONSE MUST ALWAYS be a single valid JSON object with exactly this structure:
+RESPOND ALWAYS as valid JSON:
 {
-  "reply": "Your full conversational response here as a string.",
+  "reply": "Your conversational response",
   "actions": {
-    "tasks": [
-      { "text": "specific actionable task text", "category": "home|kids|partner", "energy": "low|medium|high" }
-    ],
-    "events": [
-      { "text": "event or appointment name", "dayOffset": 0, "time": "HH:MM or empty string", "category": "medical|school|social|personal|other", "isRecurring": false }
-    ],
-    "therapyNotes": [
-      { "text": "a specific emotional trigger, pattern, or thing to bring up in therapy", "category": "trigger|pattern|win|vent|boundary" }
-    ],
-    "microSteps": [
-      { "task": "the big scary task name", "steps": ["step 1", "step 2", "step 3", "step 4"] }
-    ]
+    "tasks": [{ "text": "task", "category": "home|kids|partner", "energy": "low|medium|high" }],
+    "events": [{ "text": "event", "dayOffset": 0, "time": "HH:MM", "category": "routine|chore|metime|partner" }],
+    "therapyNotes": [{ "text": "pattern/trigger", "category": "trigger|pattern|win|vent" }],
+    "microSteps": [{ "task": "scary task", "steps": ["step1", "step2", "step3", "step4"] }]
   }
 }
 
-RULES FOR reply:
-1. Speak exactly like a blunt, funny, unconditionally loyal best friend. Swear naturally ("fuck", "shit", "hell") when it fits.
-2. NO toxic positivity. No "gently breathe in the light, sweet mama." No sugary boilerplate.
-3. When she vents about a terrible person, back her up immediately.
-4. Validate exhaustion with realism. 
-5. Never open with robotic filler. Be direct, dry, affectionate beneath the sarcasm.
-6. Do NOT mention or narrate what you put in actions. Just respond naturally. The app handles the rest silently.
+RULES: Be sarcastic, blunt, loyal. NO toxic positivity. Extract only real, specific items. Never invent.`;
 
-RULES FOR actions:
-- tasks: Only extract clear, specific, real-world to-dos. Skip vague anxiety spirals. dayOffset 0 = today.
-- events: ONLY extract things where a specific date, day, or time is mentioned — appointments, school pickups, deadlines, scheduled plans. dayOffset is days from today (0=today, 1=tomorrow, 7=next week, etc). Estimate from context ("next Tuesday", "this Friday", "in two weeks"). If no time/date is mentioned at all, do NOT create an event — put it in tasks instead.
-- therapyNotes: Extract emotional patterns, recurring stressors, relationship dynamics, or wins worth discussing with a therapist. Be specific.
-- microSteps: Only when she mentions a task that sounds overwhelming or she's been avoiding. Break it into 4 stupid-simple steps.
-- All arrays can be empty [] if nothing applies. Never invent actions that weren't implied.`;
-
-        // ── GEMINI API KEY ───────────────────────────────────────────
-        function getApiKey() {
-            return localStorage.getItem('clara_gemini_key') || null;
-        }
-
-        function saveApiKey(key) {
-            localStorage.setItem('clara_gemini_key', key);
-        }
-
-        async function ensureApiKey() {
-            const key = getApiKey();
-            if (key) return key;
-
-            return new Promise(resolve => {
-                // Show key prompt modal
-                document.getElementById('apiKeyModal').classList.remove('hidden');
-                document.getElementById('apiKeyModal').classList.add('flex');
-                window._apiKeyResolve = resolve;
-            });
-        }
-
-        window.submitApiKey = function() {
-            const input = document.getElementById('apiKeyInput');
-            const key = input?.value?.trim();
-            if (!key) { showToast("Paste your API key first!"); return; }
-            saveApiKey(key);
-            document.getElementById('apiKeyModal').classList.add('hidden');
-            document.getElementById('apiKeyModal').classList.remove('flex');
-            if (window._apiKeyResolve) { window._apiKeyResolve(key); window._apiKeyResolve = null; }
-            // If no profile yet, kick off onboarding now
-            if (!loadProfile()) setTimeout(startOnboarding, 300);
-        };
-        // ── END GEMINI API KEY ───────────────────────────────────────
+        // ── LOCAL PERSISTENCE ────────────────────────────────────
         const LS_KEYS = {
             chat: 'clara_chat',
             tasks: 'clara_tasks',
             events: 'clara_events',
             notes: 'clara_notes',
             nudges: 'clara_nudges',
+            apiKey: 'clara_gemini_key',
         };
 
         function lsSave(key, data) {
@@ -801,35 +629,57 @@ RULES FOR actions:
 
         function restoreFromLocalStorage() {
             state.chatHistory = lsLoad(LS_KEYS.chat, state.chatHistory);
-            state.tasks       = lsLoad(LS_KEYS.tasks, []);
-            state.events      = lsLoad(LS_KEYS.events, []);
-            state.therapyNotes= lsLoad(LS_KEYS.notes, []);
-            state.nudges      = lsLoad(LS_KEYS.nudges, []);
+            state.tasks = lsLoad(LS_KEYS.tasks, state.tasks);
+            state.events = lsLoad(LS_KEYS.events, state.events);
+            state.therapyNotes = lsLoad(LS_KEYS.notes, state.therapyNotes);
+            state.nudges = lsLoad(LS_KEYS.nudges, state.nudges);
         }
 
         function persistAll() {
-            lsSave(LS_KEYS.chat,   state.chatHistory);
-            lsSave(LS_KEYS.tasks,  state.tasks);
+            lsSave(LS_KEYS.chat, state.chatHistory);
+            lsSave(LS_KEYS.tasks, state.tasks);
             lsSave(LS_KEYS.events, state.events);
-            lsSave(LS_KEYS.notes,  state.therapyNotes);
+            lsSave(LS_KEYS.notes, state.therapyNotes);
             lsSave(LS_KEYS.nudges, state.nudges);
         }
-        // ── END LOCAL PERSISTENCE ────────────────────────────────────
+
+        function getApiKey() {
+            return localStorage.getItem(LS_KEYS.apiKey) || null;
+        }
+
+        function saveApiKey(key) {
+            localStorage.setItem(LS_KEYS.apiKey, key);
+        }
+
+        window.submitApiKey = function() {
+            const input = document.getElementById('apiKeyInput');
+            const key = input?.value?.trim();
+            if (!key) { showToast("Paste your API key first!"); return; }
+            saveApiKey(key);
+            document.getElementById('apiKeyModal').classList.add('hidden');
+            document.getElementById('apiKeyModal').classList.remove('flex');
+            input.value = '';
+            showToast("API key saved!");
+        };
+
+        async function ensureApiKey() {
+            const key = getApiKey();
+            if (key) return key;
+            
+            return new Promise(resolve => {
+                document.getElementById('apiKeyModal').classList.remove('hidden');
+                document.getElementById('apiKeyModal').classList.add('flex');
+                window._apiKeyResolve = resolve;
+            });
+        }
 
         function initializeApp() {
             restoreFromLocalStorage();
-            renderTasks();
             renderSyncedChat();
+            renderTasks();
             renderTherapyNotes();
             renderHorizon();
-            renderNudges();
         }
-
-        // Auth modal stubs — no-ops since we're localStorage only
-        function openAuthModal() { showToast("Clara saves everything locally on this device. No account needed!"); }
-        function closeAuthModal() {}
-        function toggleAuthMode() {}
-        async function handleAuthSubmit() {}
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => {
@@ -850,973 +700,6 @@ RULES FOR actions:
                 activeTab.classList.add('bg-gothpurple-50', 'text-neonpink-100', 'border', 'border-gothpurple-300');
                 activeTab.classList.remove('text-ashgray-200');
             }
-            if (tabId === 'two-week-horizon') {
-                renderHorizon();
-            }
-        }
-
-        // --- STREAMING_CHUNK: Tracing the Two-Week Horizon Layout... ---
-        const DAYS_OF_WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const BASE_DATE = new Date(); BASE_DATE.setHours(0,0,0,0);
-
-        function getDayString(offset) {
-            const d = new Date(BASE_DATE);
-            d.setDate(BASE_DATE.getDate() + offset);
-            const dayName = DAYS_OF_WEEK[d.getDay()];
-            const month = d.toLocaleString('en-US', { month: 'short' });
-            const dateNum = d.getDate();
-            return {
-                dayName,
-                dateStr: `${month} ${dateNum}`,
-                offset,
-                formatted: `${dayName}, ${month} ${dateNum}`
-            };
-        }
-
-        // --- STREAMING_CHUNK: Integrating the recurring calendar systems... ---
-        function renderHorizon() {
-            const week1Timeline = document.getElementById('week1Timeline');
-            const week2Timeline = document.getElementById('week2Timeline');
-            const selectElement = document.getElementById('eventDaySelect');
-            if (!week1Timeline || !week2Timeline) return;
-
-            week1Timeline.innerHTML = '';
-            week2Timeline.innerHTML = '';
-            
-            if (selectElement) {
-                selectElement.innerHTML = '';
-            }
-
-            for (let i = 0; i < 14; i++) {
-                const day = getDayString(i);
-                const currentDayOfWeek = (BASE_DATE.getDay() + i) % 7;
-                
-                if (selectElement) {
-                    const opt = document.createElement('option');
-                    opt.value = i;
-                    opt.innerText = i === 0 ? `Today (${day.formatted})` : i === 1 ? `Tomorrow (${day.formatted})` : day.formatted;
-                    selectElement.appendChild(opt);
-                }
-
-                const dayCard = document.createElement('div');
-                dayCard.className = "p-4 rounded-2xl border border-gothpurple-300/30 bg-gothpurple-100 shadow-sm hover:border-neonpink-200/50 transition-all space-y-2.5";
-                dayCard.innerHTML = `
-                    <div class="flex items-center justify-between border-b border-gothpurple-300/20 pb-2">
-                        <div class="flex items-baseline gap-2">
-                            <span class="font-serif font-bold text-sm text-ashgray-50">${i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : day.dayName}</span>
-                            <span class="text-[11px] font-semibold text-ashgray-200">${day.dateStr}</span>
-                        </div>
-                        <button class="add-event-btn text-xs text-neonpink-200 hover:text-neonpink-100 font-bold transition-all"><i class="fa-solid fa-plus-circle mr-0.5"></i> Add</button>
-                    </div>
-                    <div class="event-slots-container space-y-1.5"></div>
-                `;
-
-                dayCard.querySelector('.add-event-btn').onclick = () => openAddEventModal(i);
-
-                const slotsContainer = dayCard.querySelector('.event-slots-container');
-                
-                // Match events: either exact dayOffset (for single tasks) OR matching dayOfWeek (for weekly recurrings)
-                const dayEvents = state.events
-                    .filter(e => {
-                        if (e.isRecurring) {
-                            return parseInt(e.dayOfWeek) === currentDayOfWeek;
-                        } else {
-                            return parseInt(e.dayOffset) === i;
-                        }
-                    })
-                    .sort((a, b) => a.time.localeCompare(b.time));
-
-                if (dayEvents.length === 0) {
-                    slotsContainer.innerHTML = `<p class="text-[10px] text-ashgray-300 italic py-1 pl-1">Serene and clear</p>`;
-                } else {
-                    dayEvents.forEach(evt => {
-                        const evtBar = document.createElement('div');
-                        let styles = "bg-gothpurple-50 border-gothpurple-300/50 text-ashgray-100";
-                        if (evt.category === 'chore') styles = "bg-gothpurple-200 border-neonpink-200/40 text-neonpink-100";
-                        if (evt.category === 'metime') styles = "bg-rose-950/40 border-rose-900/40 text-rose-200";
-                        if (evt.category === 'partner') styles = "bg-gothpurple-50/50 border-ashgray-300/30 text-ashgray-200";
-
-                        evtBar.className = `p-2 rounded-xl border text-xs flex items-center justify-between gap-2 font-medium ${styles}`;
-                        evtBar.innerHTML = `
-                            <div class="flex items-center gap-2 min-w-0">
-                                <span class="text-[10px] bg-gothblack-200 px-1.5 py-0.5 rounded font-bold shadow-xs shrink-0">${formatTime(evt.time)}</span>
-                                <span class="truncate">${evt.text}</span>
-                                ${evt.isRecurring ? `<span class="text-[9px] text-neonpink-200 shrink-0 font-bold" title="Weekly Recurring">🔄</span>` : ''}
-                            </div>
-                            <button class="delete-event-btn text-ashgray-300 hover:text-rose-500 transition-all p-1 text-[10px] shrink-0"><i class="fa-solid fa-circle-xmark"></i></button>
-                        `;
-
-                        evtBar.querySelector('.delete-event-btn').onclick = (eventObj) => {
-                            eventObj.stopPropagation();
-                            deleteEvent(evt.id);
-                        };
-
-                        slotsContainer.appendChild(evtBar);
-                    });
-                }
-
-                if (i < 7) {
-                    week1Timeline.appendChild(dayCard);
-                } else {
-                    week2Timeline.appendChild(dayCard);
-                }
-            }
-        }
-
-        function formatTime(t) {
-            const parts = t.split(':');
-            let hours = parseInt(parts[0]);
-            const minutes = parts[1];
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12;
-            return `${hours}:${minutes} ${ampm}`;
-        }
-
-        function openAddEventModal(dayOffset) {
-            document.getElementById('eventDaySelect').value = dayOffset;
-            document.getElementById('eventTitleInput').value = '';
-            document.getElementById('eventRecurringInput').checked = false;
-            document.getElementById('addEventModal').classList.remove('hidden');
-            document.getElementById('addEventModal').classList.add('flex');
-        }
-
-        function closeAddEventModal() {
-            document.getElementById('addEventModal').classList.add('hidden');
-            document.getElementById('addEventModal').classList.remove('flex');
-        }
-
-        async function addNewEvent() {
-            const titleInput = document.getElementById('eventTitleInput');
-            const dayOffset = document.getElementById('eventDaySelect').value;
-            const time = document.getElementById('eventTimeInput').value;
-            const category = document.getElementById('eventCategorySelect').value;
-            const isRecurring = document.getElementById('eventRecurringInput').checked;
-            const text = titleInput.value.trim();
-
-            if (!text) return;
-
-            // Calculate the specific day of the week this offset matches
-            const dayOfWeek = (BASE_DATE.getDay() + parseInt(dayOffset)) % 7;
-
-            const newEvent = {
-                id: Date.now(),
-                dayOffset: parseInt(dayOffset),
-                time,
-                text,
-                category,
-                isRecurring,
-                dayOfWeek
-            };
-
-            state.events.push(newEvent);
-            renderHorizon();
-            lsSave(LS_KEYS.events, state.events);
-            closeAddEventModal();
-            showToast("Event saved!");
-        }
-
-        async function deleteEvent(id) {
-            state.events = state.events.filter(e => e.id !== id);
-            renderHorizon();
-            lsSave(LS_KEYS.events, state.events);
-            showToast("Event removed");
-        }
-
-        // --- STREAMING_CHUNK: Managing Nudge Alarms with Synced Synthesizer... ---
-        function addQuickNudge() {
-            const textInput = document.getElementById('nudgeTextInput');
-            const timerSelect = document.getElementById('nudgeTimerSelect');
-            const text = textInput.value.trim();
-
-            if (!text) {
-                showToast("Enter a custom reminder.");
-                return;
-            }
-
-            const minutes = parseInt(timerSelect.value);
-            const targetTime = Date.now() + (minutes * 60 * 1000);
-
-            const newNudge = {
-                id: Date.now(),
-                text,
-                targetTime,
-                minutesLeft: minutes,
-                triggered: false
-            };
-
-            state.nudges.push(newNudge);
-            textInput.value = '';
-            renderNudges();
-            showToast(`Nudge set! Sassy alert in ${minutes} minutes.`);
-        }
-
-        function renderNudges() {
-            const container = document.getElementById('activeNudgesList');
-            if (!container) return;
-            container.innerHTML = '';
-
-            const active = state.nudges.filter(n => !n.triggered);
-            const badge = document.getElementById('upcomingNudgeBadge');
-            if (badge) {
-                if (active.length > 0) badge.classList.remove('hidden');
-                else badge.classList.add('hidden');
-            }
-
-            if (active.length === 0) {
-                container.innerHTML = `<p class="col-span-full text-xs text-ashgray-300 italic py-2 text-center">No active nudge timers</p>`;
-                return;
-            }
-
-            active.forEach(n => {
-                const diffMs = n.targetTime - Date.now();
-                const totalSeconds = Math.max(0, Math.floor(diffMs / 1000));
-                const mins = Math.floor(totalSeconds / 60);
-                const secs = totalSeconds % 60;
-                const formattedTime = `${mins}:${secs.toString().padStart(2, '0')}`;
-
-                const card = document.createElement('div');
-                card.className = "p-3 rounded-xl border border-gothpurple-300/40 bg-gothpurple-200 flex items-center justify-between gap-3 text-xs";
-                card.innerHTML = `
-                    <div class="space-y-0.5 truncate">
-                        <p class="font-bold text-ashgray-100 truncate">"${n.text}"</p>
-                        <p class="text-[10px] text-neonpink-200 font-bold uppercase"><i class="fa-regular fa-clock text-neonpink-200 mr-1 animate-pulse"></i> ${formattedTime} left</p>
-                    </div>
-                    <button class="delete-nudge-btn text-ashgray-300 hover:text-rose-500 transition-all shrink-0"><i class="fa-solid fa-trash-can"></i></button>
-                `;
-
-                card.querySelector('.delete-nudge-btn').onclick = () => deleteNudge(n.id);
-                container.appendChild(card);
-            });
-        }
-
-        function deleteNudge(id) {
-            state.nudges = state.nudges.filter(n => n.id !== id);
-            renderNudges();
-            showToast("Nudge timer deleted");
-        }
-
-        let activeNudgeId = null;
-
-        setInterval(() => {
-            let stateUpdated = false;
-            state.nudges.forEach(n => {
-                if (!n.triggered && Date.now() >= n.targetTime) {
-                    n.triggered = true;
-                    stateUpdated = true;
-                    triggerVagusNudgeAlert(n.text, n.id);
-                }
-            });
-            if (stateUpdated) {
-                renderNudges();
-            } else if (state.nudges.filter(n => !n.triggered).length > 0) {
-                renderNudges();
-            }
-        }, 1000);
-
-        function triggerVagusNudgeAlert(message, nudgeId) {
-            activeNudgeId = nudgeId;
-            document.getElementById('nudgeAlertMessage').innerText = `"${message}"`;
-            document.getElementById('nudgeAlertModal').classList.remove('hidden');
-            document.getElementById('nudgeAlertModal').classList.add('flex');
-
-            try {
-                const AudioCtx = window.AudioContext || window.webkitAudioContext;
-                const ctx = new AudioCtx();
-                
-                const playTone = (frequency, delay, duration) => {
-                    const osc = ctx.createOscillator();
-                    const gain = ctx.createGain();
-                    
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(frequency, ctx.currentTime + delay);
-                    
-                    gain.gain.setValueAtTime(0, ctx.currentTime + delay);
-                    gain.gain.linearRampToValueAtTime(0.08, ctx.currentTime + delay + 0.05);
-                    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + delay + duration);
-                    
-                    osc.connect(gain);
-                    gain.connect(ctx.destination);
-                    
-                    osc.start(ctx.currentTime + delay);
-                    osc.stop(ctx.currentTime + delay + duration);
-                };
-
-                playTone(523.25, 0, 1.2);    // C5
-                playTone(659.25, 0.15, 1.2); // E5
-                playTone(783.99, 0.3, 1.5);  // G5
-                playTone(1046.5, 0.45, 1.8); // C6
-
-            } catch (e) {
-                console.warn("Audio Context init issue ignored safely.");
-            }
-        }
-
-        function dismissActiveNudge() {
-            document.getElementById('nudgeAlertModal').classList.add('hidden');
-            document.getElementById('nudgeAlertModal').classList.remove('flex');
-            if (activeNudgeId) {
-                state.nudges = state.nudges.filter(n => n.id !== activeNudgeId);
-                activeNudgeId = null;
-                renderNudges();
-            }
-        }
-
-        // --- STREAMING_CHUNK: Rendering the Daily Mess Board... ---
-        // ── DRAG AND DROP ────────────────────────────────────────────
-        let dragSrcId = null;
-        let dragSrcType = null; // 'task' | 'note'
-
-        function setupDropZones() {
-            // Tasks
-            ['homeTasksList','kidsTasksList','partnerTasksList'].forEach(listId => {
-                const el = document.getElementById(listId);
-                if (!el) return;
-                el.addEventListener('dragover', e => { e.preventDefault(); el.classList.add('drop-target'); });
-                el.addEventListener('dragleave', () => el.classList.remove('drop-target'));
-                el.addEventListener('drop', e => {
-                    e.preventDefault();
-                    el.classList.remove('drop-target');
-                    if (dragSrcType !== 'task') return;
-                    const newCat = listId === 'homeTasksList' ? 'home' : listId === 'kidsTasksList' ? 'kids' : 'partner';
-                    moveTask(dragSrcId, newCat);
-                });
-            });
-
-            // Therapy notes
-            ['individualTherapyList','couplesTherapyList','familyTherapyList'].forEach(listId => {
-                const el = document.getElementById(listId);
-                if (!el) return;
-                el.addEventListener('dragover', e => { e.preventDefault(); el.classList.add('drop-target'); });
-                el.addEventListener('dragleave', () => el.classList.remove('drop-target'));
-                el.addEventListener('drop', e => {
-                    e.preventDefault();
-                    el.classList.remove('drop-target');
-                    if (dragSrcType !== 'note') return;
-                    const newCat = listId === 'individualTherapyList' ? 'individual' : listId === 'couplesTherapyList' ? 'couples' : 'family';
-                    moveNote(dragSrcId, newCat);
-                });
-            });
-        }
-
-        async function moveTask(id, newCategory) {
-            const task = state.tasks.find(t => String(t.id) === String(id));
-            if (!task || task.category === newCategory) return;
-            task.category = newCategory;
-            lsSave(LS_KEYS.tasks, state.tasks);
-            renderTasks();
-            showToast(`Moved ✓`);
-        }
-
-        async function moveNote(id, newCategory) {
-            const note = state.therapyNotes.find(n => String(n.id) === String(id));
-            if (!note || note.category === newCategory) return;
-            note.category = newCategory;
-            lsSave(LS_KEYS.notes, state.therapyNotes);
-            renderTherapyNotes();
-            showToast(`Moved ✓`);
-        }
-        // ── END DRAG AND DROP ────────────────────────────────────────
-
-        function renderTasks() {
-            const homeList = document.getElementById('homeTasksList');
-            const kidsList = document.getElementById('kidsTasksList');
-            const partnerList = document.getElementById('partnerTasksList');
-            
-            if (!homeList || !kidsList || !partnerList) return;
-            
-            homeList.innerHTML = '';
-            kidsList.innerHTML = '';
-            partnerList.innerHTML = '';
-            let counts = { home: 0, kids: 0, partner: 0 };
-
-            state.tasks.forEach(task => {
-                if (state.lowEnergyMode && task.energy !== 'low') return;
-                counts[task.category]++;
-
-                const taskCard = document.createElement('div');
-                taskCard.className = `p-3 rounded-2xl border transition-all flex items-start justify-between gap-3 cursor-grab active:cursor-grabbing ${task.completed ? 'bg-gothpurple-200/40 border-gothpurple-300/20 opacity-60' : 'bg-gothpurple-200 border-gothpurple-300/40 hover:border-neonpink-200 shadow-sm'}`;
-                taskCard.draggable = true;
-                taskCard.addEventListener('dragstart', e => {
-                    dragSrcId = String(task.id);
-                    dragSrcType = 'task';
-                    e.dataTransfer.effectAllowed = 'move';
-                    taskCard.classList.add('opacity-40');
-                });
-                taskCard.addEventListener('dragend', () => taskCard.classList.remove('opacity-40'));
-
-                let energyColor = 'bg-emerald-950/80 text-emerald-300';
-                if (task.energy === 'medium') energyColor = 'bg-amber-950/80 text-amber-300';
-                if (task.energy === 'high') energyColor = 'bg-rose-950/80 text-rose-300';
-
-                taskCard.innerHTML = `
-                    <div class="flex items-start gap-2.5 flex-grow">
-                        <i class="fa-solid fa-grip-vertical text-ashgray-300/40 mt-1 text-xs shrink-0 cursor-grab"></i>
-                        <button class="toggle-task-btn mt-0.5 text-ashgray-300 hover:text-neonpink-200 transition-all text-base flex">
-                            <i class="${task.completed ? 'fa-regular fa-circle-check text-neonpink-200' : 'fa-regular fa-circle'}"></i>
-                        </button>
-                        <div class="flex-grow">
-                            <p class="text-xs md:text-sm font-medium ${task.completed ? 'line-through text-ashgray-300' : 'text-ashgray-100'}">${task.text}</p>
-                            <span class="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider mt-1 ${energyColor}">${task.energy} spoons</span>
-                        </div>
-                    </div>
-                    <button class="delete-task-btn text-ashgray-300 hover:text-rose-500 transition-all text-xs p-1 shrink-0"><i class="fa-solid fa-trash-can"></i></button>
-                `;
-
-                taskCard.querySelector('.toggle-task-btn').onclick = () => toggleTaskCompletion(task.id);
-                taskCard.querySelector('.delete-task-btn').onclick = () => deleteTask(task.id);
-
-                if (task.category === 'home') homeList.appendChild(taskCard);
-                if (task.category === 'kids') kidsList.appendChild(taskCard);
-                if (task.category === 'partner') partnerList.appendChild(taskCard);
-            });
-
-            document.getElementById('homeCount').innerText = counts.home;
-            document.getElementById('kidsCount').innerText = counts.kids;
-            document.getElementById('partnerCount').innerText = counts.partner;
-        }
-
-        async function toggleTaskCompletion(id) {
-            const task = state.tasks.find(t => t.id === id);
-            if (!task) return;
-
-            task.completed = !task.completed;
-            renderTasks();
-            lsSave(LS_KEYS.tasks, state.tasks);
-            if (task.completed) showToast("🎉 Small win counted!");
-        }
-
-        async function addTask(category, inputId) {
-            const input = document.getElementById(inputId);
-            const text = input.value.trim();
-            if (!text) return;
-
-            let energy = "low";
-            const lowerText = text.toLowerCase();
-            if (lowerText.includes("clean") || lowerText.includes("wash") || lowerText.includes("cook")) energy = "medium";
-            if (lowerText.includes("call") || lowerText.includes("schedule") || lowerText.includes("doctor")) energy = "high";
-
-            const newTask = {
-                id: Date.now(),
-                text: text,
-                category: category,
-                energy: energy,
-                completed: false
-            };
-
-            state.tasks.push(newTask);
-            renderTasks();
-            lsSave(LS_KEYS.tasks, state.tasks);
-            input.value = '';
-            showToast("Added!");
-        }
-
-        async function deleteTask(id) {
-            state.tasks = state.tasks.filter(t => t.id !== id);
-            renderTasks();
-            lsSave(LS_KEYS.tasks, state.tasks);
-            showToast("Removed");
-        }
-
-        function toggleLowEnergyMode() {
-            state.lowEnergyMode = !state.lowEnergyMode;
-            const btn = document.getElementById('lowEnergyBtn');
-            const icon = document.getElementById('energyIcon');
-            const label = document.getElementById('energyLabel');
-            const banner = document.getElementById('lowEnergyBanner');
-
-            if (state.lowEnergyMode) {
-                btn.classList.add('bg-neonpink-200', 'text-white', 'border-neonpink-200');
-                icon.className = "fa-solid fa-battery-empty text-white";
-                label.innerText = "Slug Mode: Active";
-                banner.classList.remove('hidden');
-            } else {
-                btn.classList.remove('bg-neonpink-200', 'text-white', 'border-neonpink-200');
-                icon.className = "fa-solid fa-battery-half text-neonpink-200";
-                label.innerText = "Slug Mode";
-                banner.classList.add('hidden');
-            }
-            renderTasks();
-        }
-
-        // --- STREAMING_CHUNK: Connecting Clara's Unfiltered AI chat... ---
-        async function callGemini(contents, systemInstruction = null, retries = 3) {
-            const apiKey = getApiKey();
-            if (!apiKey) throw new Error("No API key");
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-            // Trim history to last 10 exchanges max to avoid token bloat
-            const trimmed = contents.length > 20 ? contents.slice(-20) : contents;
-
-            const payload = {
-                contents: trimmed,
-                generationConfig: {
-                    responseMimeType: "application/json",
-                    temperature: 0.9,
-                    maxOutputTokens: 1024,
-                }
-            };
-            if (systemInstruction) payload.systemInstruction = { parts: [{ text: systemInstruction }] };
-
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
-            if (response.status === 429 && retries > 0) {
-                const wait = (4 - retries) * 4000; // 4s, 8s, 12s backoff
-                await new Promise(r => setTimeout(r, wait));
-                return callGemini(contents, systemInstruction, retries - 1);
-            }
-
-            if (!response.ok) {
-                const errBody = await response.text().catch(() => '');
-                throw new Error(`API ${response.status}: ${errBody.slice(0, 120)}`);
-            }
-
-            return await response.json();
-        }
-
-        async function sendChatMessage(speakReply = false) {
-            const input = document.getElementById('chatInput');
-            const text = input.value.trim();
-            if (!text) return;
-
-            // Check for API key BEFORE entering try/catch — modal must not be swallowed
-            const apiKey = await ensureApiKey();
-            if (!apiKey) return;
-
-            input.value = '';
-            input.style.height = 'auto';
-            appendUserMessage(text);
-            const loadingId = appendLoadingMessage();
-            if (speakReply) setVoiceState('thinking');
-
-            try {
-                const updatedHistory = [...state.chatHistory, { role: "user", parts: [{ text }] }];
-                const profileContext = buildProfileSystemContext(state.profile);
-                const systemPromptWithProfile = profileContext
-                    ? CLARA_SYSTEM_PROMPT + `\n\nUSER PROFILE: ${profileContext}`
-                    : CLARA_SYSTEM_PROMPT;
-                const result = await callGemini(updatedHistory, systemPromptWithProfile);
-                removeLoadingMessage(loadingId);
-
-                const rawText = result.candidates?.[0]?.content?.parts?.[0]?.text || '{"reply":"Listening...","actions":{"tasks":[],"events":[],"therapyNotes":[],"microSteps":[]}}';
-                
-                let parsed;
-                try {
-                    const clean = rawText.replace(/^```json\s*/,'').replace(/```\s*$/,'').trim();
-                    parsed = JSON.parse(clean);
-                } catch(e) {
-                    parsed = { reply: rawText, actions: { tasks: [], events: [], therapyNotes: [], microSteps: [] } };
-                }
-
-                const reply = parsed.reply || rawText;
-                const actions = parsed.actions || {};
-
-                // Store only the plain reply in history (not the full JSON blob — keeps tokens lean)
-                const finalHistory = [...updatedHistory, { role: "model", parts: [{ text: reply }] }];
-
-                // Save chat history
-                state.chatHistory = finalHistory;
-                lsSave(LS_KEYS.chat, state.chatHistory);
-
-                // Show Clara's reply
-                appendClaraMessage(reply);
-
-                // Speak if in voice mode
-                if (speakReply || voiceModeActive) {
-                    voiceAutoRestart = voiceModeActive;
-                    await speakAsClara(reply);
-                }
-
-                // Act on extracted data silently, then show a summary pill
-                const done = [];
-
-                // Tasks
-                if (actions.tasks?.length) {
-                    for (const t of actions.tasks) {
-                        const newTask = { id: Date.now() + Math.random(), text: t.text, category: t.category || 'home', energy: t.energy || 'medium', completed: false };
-                        state.tasks.push(newTask);
-                    }
-                    renderTasks();
-                    done.push(`📋 ${actions.tasks.length} task${actions.tasks.length > 1 ? 's' : ''} added`);
-                }
-
-                // Events
-                if (actions.events?.length) {
-                    const dayOfWeekBase = BASE_DATE.getDay();
-                    for (const ev of actions.events) {
-                        const offset = parseInt(ev.dayOffset) || 0;
-                        const newEvent = { id: Date.now() + Math.random(), dayOffset: offset, time: ev.time || '', text: ev.text, category: ev.category || 'other', isRecurring: ev.isRecurring || false, dayOfWeek: (dayOfWeekBase + offset) % 7 };
-                        state.events.push(newEvent);
-                    }
-                    renderHorizon();
-                    done.push(`📅 ${actions.events.length} event${actions.events.length > 1 ? 's' : ''} scheduled`);
-                }
-
-                // Therapy notes
-                if (actions.therapyNotes?.length) {
-                    for (const n of actions.therapyNotes) {
-                        const noteId = Date.now() + Math.random();
-                        const newNote = { id: noteId, text: n.text, category: n.category || 'vent', discussed: false, reflection: '' };
-                        state.therapyNotes.push(newNote);
-                    }
-                    renderTherapyNotes();
-                    done.push(`🧠 ${actions.therapyNotes.length} therapy note${actions.therapyNotes.length > 1 ? 's' : ''} saved`);
-                }
-
-                // Micro-steps — show inline in chat as a special card
-                if (actions.microSteps?.length) {
-                    for (const ms of actions.microSteps) {
-                        appendMicroStepsCard(ms.task, ms.steps);
-                    }
-                    done.push(`🪜 steps broken down`);
-                }
-
-                // Show silent action summary pill if anything was done
-                if (done.length) {
-                    appendActionSummary(done);
-                    renderTasks();
-                }
-
-                // Persist everything to localStorage in offline mode
-                persistAll();
-
-            } catch (e) {
-                removeLoadingMessage(loadingId);
-                console.error('Clara API error:', e.message);
-                const errMsg = e.message?.includes('429')
-                    ? "Rate limit hit — give me about 10 seconds and try again."
-                    : e.message?.includes('401') || e.message?.includes('403')
-                        ? "API key issue — tap the 🔑 API Key button and re-enter your key."
-                        : "Something went sideways. Check the console for details.";
-                appendClaraMessage(errMsg);
-                if (speakReply || voiceModeActive) await speakAsClara(errMsg);
-            }
-        }
-
-        function appendMicroStepsCard(taskName, steps) {
-            const box = document.getElementById('chatMessages');
-            if (!box) return;
-            const div = document.createElement('div');
-            div.className = "flex items-start gap-3";
-            const stepsHtml = steps.map((s, i) => `
-                <div class="flex items-center justify-between gap-2 p-2 rounded-xl bg-gothpurple-100 text-xs font-semibold text-ashgray-100 border border-gothpurple-300/30">
-                    <span><span class="text-neonpink-200 font-bold mr-1">${i+1}.</span>${s}</span>
-                    <button onclick="addMicroStepToBoard('${s.replace(/'/g,"\\'")}'); this.innerHTML='<i class=\\'fa-solid fa-check\\'></i>'; this.disabled=true;" class="text-neonpink-200 hover:text-neonpink-100 shrink-0 text-xs font-bold"><i class="fa-solid fa-circle-plus"></i></button>
-                </div>`).join('');
-            div.innerHTML = `
-                <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-200 shrink-0 text-xs"><i class="fa-solid fa-layer-group"></i></div>
-                <div class="bg-gothpurple-50/60 p-3.5 rounded-2xl rounded-tl-none text-ashgray-100 max-w-[90%] w-full space-y-2">
-                    <p class="text-xs font-bold text-neonpink-100 uppercase tracking-wide">Idiot's guide to: ${taskName}</p>
-                    ${stepsHtml}
-                </div>`;
-            box.appendChild(div);
-            box.scrollTop = box.scrollHeight;
-        }
-
-        function appendActionSummary(items) {
-            const box = document.getElementById('chatMessages');
-            if (!box) return;
-            const div = document.createElement('div');
-            div.className = "flex justify-center";
-            div.innerHTML = `<div class="flex flex-wrap gap-1.5 justify-center py-1">
-                ${items.map(i => `<span class="px-2.5 py-1 rounded-full bg-gothpurple-300/40 border border-gothpurple-300/50 text-[10px] font-bold text-ashgray-200">${i}</span>`).join('')}
-            </div>`;
-            box.appendChild(div);
-            box.scrollTop = box.scrollHeight;
-        }
-
-        function handleChatKeyPress(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChatMessage(); } }
-        
-        async function resetChat() {
-            const defaultChat = [
-                { role: "user", parts: [{ text: "Introduce yourself briefly." }] },
-                { role: "model", parts: [{ text: "Listen, I'm Clara. I'm your sarcastic, ride-or-die best friend. I'm not here to tell you to align your chakras. Let's get through this mess together." }] }
-            ];
-
-            state.chatHistory = defaultChat;
-            lsSave(LS_KEYS.chat, state.chatHistory);
-            renderSyncedChat();
-            showToast("Chat cleared");
-        }
-
-        function getClaraReplyText(msg) {
-            return msg.parts?.[0]?.text || '';
-        }
-
-        function renderSyncedChat() {
-            const box = document.getElementById('chatMessages');
-            if (!box) return;
-            box.innerHTML = '';
-            
-            state.chatHistory.forEach(msg => {
-                if (msg.role === 'user' && msg.parts?.[0]?.text?.includes("Introduce yourself briefly")) return;
-                
-                const div = document.createElement('div');
-                if (msg.role === 'user') {
-                    div.className = "flex items-start justify-end gap-3";
-                    div.innerHTML = `
-                        <div class="bg-gothpurple-300 text-white p-3.5 rounded-2xl rounded-tr-none max-w-[85%] font-medium leading-relaxed">${msg.parts[0].text}</div>
-                        <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-200 shrink-0 text-xs font-bold shadow-sm">Me</div>
-                    `;
-                } else {
-                    const replyText = getClaraReplyText(msg);
-                    div.className = "flex items-start gap-3";
-                    div.innerHTML = `
-                        <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-200 shrink-0 text-xs font-bold shadow-sm"><i class="fa-solid fa-face-laugh-wink"></i></div>
-                        <div class="bg-gothpurple-200/80 p-3.5 rounded-2xl rounded-tl-none text-ashgray-100 max-w-[85%] leading-relaxed">${replyText}</div>
-                    `;
-                }
-                box.appendChild(div);
-            });
-            box.scrollTop = box.scrollHeight;
-        }
-
-        function appendUserMessage(text) {
-            const box = document.getElementById('chatMessages');
-            if (!box) return;
-            const div = document.createElement('div');
-            div.className = "flex items-start justify-end gap-3";
-            div.innerHTML = `
-                <div class="bg-gothpurple-300 text-white p-3.5 rounded-2xl rounded-tr-none max-w-[85%] font-medium leading-relaxed">${text}</div>
-                <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-200 shrink-0 text-xs font-bold shadow-sm">Me</div>
-            `;
-            box.appendChild(div);
-            box.scrollTop = box.scrollHeight;
-        }
-
-        function appendClaraMessage(text) {
-            const box = document.getElementById('chatMessages');
-            if (!box) return;
-            const div = document.createElement('div');
-            div.className = "flex items-start gap-3";
-            div.innerHTML = `
-                <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-200 shrink-0 text-xs font-bold shadow-sm"><i class="fa-solid fa-face-laugh-wink"></i></div>
-                <div class="bg-gothpurple-200/80 p-3.5 rounded-2xl rounded-tl-none text-ashgray-100 max-w-[85%] leading-relaxed">${text}</div>
-            `;
-            box.appendChild(div);
-            box.scrollTop = box.scrollHeight;
-        }
-
-        function appendLoadingMessage() {
-            const box = document.getElementById('chatMessages');
-            if (!box) return "";
-            const id = "loading-" + Date.now();
-            const div = document.createElement('div');
-            div.id = id;
-            div.className = "flex items-start gap-3 italic text-ashgray-300 text-xs font-medium";
-            div.innerHTML = `
-                <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-100 shrink-0 text-xs"><i class="fa-solid fa-spinner animate-spin"></i></div>
-                <div class="bg-gothpurple-200 p-3 rounded-xl">Clara is writing back...</div>
-            `;
-            box.appendChild(div);
-            box.scrollTop = box.scrollHeight;
-            return id;
-        }
-
-        function removeLoadingMessage(id) {
-            const el = document.getElementById(id);
-            if (el) el.remove();
-        }
-
-        // --- STREAMING_CHUNK: Launching Sassy Brain Dump Parser... ---
-        async function addMicroStepToBoard(text) {
-            const newTask = {
-                id: Date.now(),
-                text: text,
-                category: "home",
-                energy: "low",
-                completed: false
-            };
-
-            state.tasks.push(newTask);
-            renderTasks();
-            lsSave(LS_KEYS.tasks, state.tasks);
-            showToast("Added step!");
-        }
-
-
-        // --- STREAMING_CHUNK: Managing Therapy Receipts and Grounding Guide... ---
-        const KIND_REMINDERS = [
-            "\"The dirt on the floor isn't going anywhere, and neither is your value. Leave it for tomorrow.\"",
-            "\"If they are fed, alive, and the house isn't currently burning, lower your standard and go to sleep.\"",
-            "\"You're doing fine. Unconditional love doesn't mean you can't lock yourself in the bathroom.\""
-        ];
-
-        function generateNewReminder() {
-            const idx = Math.floor(Math.random() * KIND_REMINDERS.length);
-            document.getElementById('kindReminderText').innerText = KIND_REMINDERS[idx];
-            showToast("Grievance refreshed");
-        }
-
-        let breatheTimer = null;
-        function openOverwhelmModal() {
-            document.getElementById('overwhelmModal').classList.remove('hidden');
-            document.getElementById('overwhelmModal').classList.add('flex');
-            startBreathingGuide();
-        }
-
-        function closeOverwhelmModal() {
-            document.getElementById('overwhelmModal').classList.add('hidden');
-            document.getElementById('overwhelmModal').classList.remove('flex');
-            clearInterval(breatheTimer);
-        }
-
-        function openSensoryGroundingExercise() {
-            closeOverwhelmModal();
-            document.getElementById('sensoryModal').classList.remove('hidden');
-            document.getElementById('sensoryModal').classList.add('flex');
-        }
-
-        function startBreathingGuide() {
-            let breatheState = 0;
-            const text = document.getElementById('breatheIndicator');
-            const bar = document.getElementById('breatheBar');
-            if (!text || !bar) return;
-            
-            clearInterval(breatheTimer);
-            breatheTimer = setInterval(() => {
-                if (breatheState === 0) {
-                    text.innerText = "Inhale slowly... (4s)";
-                    bar.style.width = "100%";
-                    bar.style.backgroundColor = "#ff2d95";
-                    breatheState = 1;
-                } else if (breatheState === 1) {
-                    text.innerText = "Hold gently... (4s)";
-                    bar.style.backgroundColor = "#4c2d75";
-                    breatheState = 2;
-                } else {
-                    text.innerText = "Exhale slowly... (4s)";
-                    bar.style.width = "0%";
-                    bar.style.backgroundColor = "#ff2d95";
-                    breatheState = 0;
-                }
-            }, 4000);
-        }
-
-        function renderTherapyNotes() {
-            const indList = document.getElementById('individualTherapyList');
-            const cplList = document.getElementById('couplesTherapyList');
-            const famList = document.getElementById('familyTherapyList');
-            if (!indList || !cplList || !famList) return;
-
-            indList.innerHTML = '';
-            cplList.innerHTML = '';
-            famList.innerHTML = '';
-
-            state.therapyNotes.forEach(note => {
-                const card = document.createElement('div');
-                card.className = `p-3.5 rounded-2xl border text-xs space-y-2.5 cursor-grab active:cursor-grabbing ${note.discussed ? 'bg-gothpurple-200/40 border-gothpurple-300/20 opacity-75' : 'bg-gothpurple-200 border-gothpurple-300/40 shadow-sm'}`;
-                card.draggable = true;
-                card.addEventListener('dragstart', e => {
-                    dragSrcId = String(note.id);
-                    dragSrcType = 'note';
-                    e.dataTransfer.effectAllowed = 'move';
-                    card.classList.add('opacity-40');
-                });
-                card.addEventListener('dragend', () => card.classList.remove('opacity-40'));
-                const claraCategories = ['trigger','pattern','win','vent','boundary'];
-                const isClaraNote = claraCategories.includes(note.category);
-                const categoryPill = isClaraNote
-                    ? `<span class="px-2 py-0.5 rounded-full bg-neonpink-200/20 text-neonpink-100 text-[10px] font-bold border border-neonpink-200/30 capitalize">${note.category}</span>`
-                    : '';
-                const sourceBadge = isClaraNote
-                    ? `<span class="text-[10px] text-ashgray-300 font-semibold">🤖 From vent</span>`
-                    : '';
-
-                card.innerHTML = `
-                    <div class="flex items-start justify-between gap-2">
-                        <div class="flex items-start gap-2 flex-grow">
-                            <i class="fa-solid fa-grip-vertical text-ashgray-300/40 mt-0.5 shrink-0 cursor-grab"></i>
-                            <p class="font-medium text-ashgray-100 ${note.discussed ? 'line-through text-ashgray-300' : ''}">${note.text}</p>
-                        </div>
-                        <button class="delete-note-btn text-ashgray-300 hover:text-rose-500 transition-all shrink-0"><i class="fa-solid fa-trash-can"></i></button>
-                    </div>
-                    <div class="flex items-center gap-2">${categoryPill}${sourceBadge}</div>
-                    <div class="pt-2 border-t border-dashed border-gothpurple-300/30 flex flex-col gap-1.5">
-                        <label class="flex items-center gap-1.5 cursor-pointer text-[11px] text-ashgray-300 font-medium">
-                            <input type="checkbox" ${note.discussed ? 'checked' : ''} class="toggle-discussed-chk rounded text-neonpink-200 focus:ring-0 bg-gothblack-200 border-gothpurple-300/40">
-                            <span>Discussed with doc?</span>
-                        </label>
-                        ${note.discussed ? `
-                            <div class="space-y-1">
-                                <p class="text-[10px] uppercase font-bold text-neonpink-200 tracking-wide">Breakthroughs?</p>
-                                <textarea placeholder="What did you realize?" class="reflection-textarea w-full p-2 bg-gothpurple-200 rounded-xl border border-gothpurple-300/30 text-ashgray-100 resize-none text-[11px] h-12">${note.reflection || ''}</textarea>
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-
-                card.querySelector('.delete-note-btn').onclick = () => deleteTherapyNote(note.id);
-                card.querySelector('.toggle-discussed-chk').onchange = () => toggleTherapyDiscussed(note.id);
-                const textRef = card.querySelector('.reflection-textarea');
-                if (textRef) {
-                    textRef.onchange = (e) => saveTherapyReflection(note.id, e.target.value);
-                }
-
-                if (note.category === 'individual') indList.appendChild(card);
-                else if (note.category === 'couples') cplList.appendChild(card);
-                else if (note.category === 'family') famList.appendChild(card);
-                // Clara's semantic categories → display columns
-                else if (['trigger','pattern','win','vent','boundary'].includes(note.category)) indList.appendChild(card);
-                else indList.appendChild(card); // fallback
-            });
-        }
-
-        async function addTherapyNote() {
-            const textInput = document.getElementById('therapyNoteText');
-            const typeSelect = document.getElementById('therapyTypeSelect');
-            const text = textInput.value.trim();
-            if (!text) return;
-
-            const noteId = Date.now();
-            const newNote = {
-                id: noteId,
-                text: text,
-                category: typeSelect.value,
-                discussed: false,
-                reflection: ""
-            };
-
-            state.therapyNotes.push(newNote);
-            renderTherapyNotes();
-            lsSave(LS_KEYS.notes, state.therapyNotes);
-            textInput.value = '';
-            showToast("Saved receipt.");
-        }
-
-        async function toggleTherapyDiscussed(id) {
-            const note = state.therapyNotes.find(n => n.id === id);
-            if (!note) return;
-
-            note.discussed = !note.discussed;
-            renderTherapyNotes();
-            lsSave(LS_KEYS.notes, state.therapyNotes);
-        }
-
-        async function saveTherapyReflection(id, val) {
-            const note = state.therapyNotes.find(n => n.id === id);
-            if (!note) return;
-
-            note.reflection = val;
-            renderTherapyNotes();
-            lsSave(LS_KEYS.notes, state.therapyNotes);
-            showToast("Reflection logged.");
-        }
-
-        async function deleteTherapyNote(id) {
-            state.therapyNotes = state.therapyNotes.filter(n => n.id !== id);
-            renderTherapyNotes();
-            lsSave(LS_KEYS.notes, state.therapyNotes);
-            showToast("Removed");
-        }
-
-        function closeSensoryModal() {
-            document.getElementById('sensoryModal').classList.add('hidden');
-            document.getElementById('sensoryModal').classList.remove('flex');
         }
 
         function showToast(msg) {
@@ -1826,810 +709,308 @@ RULES FOR actions:
             t.className = "bg-gothpurple-300 text-white text-xs py-2.5 px-4 rounded-xl shadow-lg font-medium transition-all duration-300 transform translate-y-2 opacity-0 flex items-center gap-2 pointer-events-auto border border-neonpink-200/30";
             t.innerHTML = `<i class="fa-solid fa-bell text-neonpink-200 animate-bounce"></i> <span>${msg}</span>`;
             container.appendChild(t);
-            setTimeout(() => {
-                t.classList.remove('translate-y-2', 'opacity-0');
-            }, 50);
+            setTimeout(() => t.classList.remove('translate-y-2', 'opacity-0'), 50);
             setTimeout(() => {
                 t.classList.add('translate-y-2', 'opacity-0');
                 setTimeout(() => t.remove(), 300);
             }, 3000);
         }
 
-        // Global Window bindings for secure script module execution
-        window.switchTab = switchTab;
-        window.toggleLowEnergyMode = toggleLowEnergyMode;
-        window.openOverwhelmModal = openOverwhelmModal;
-        window.closeOverwhelmModal = closeOverwhelmModal;
-        window.openAuthModal = openAuthModal;
-        window.closeAuthModal = closeAuthModal;
-        window.handleAuthSubmit = handleAuthSubmit;
-        window.toggleAuthMode = toggleAuthMode;
-        window.sendChatMessage = sendChatMessage;
-        window.handleChatKeyPress = handleChatKeyPress;
-        window.resetChat = resetChat;
-        window.addTask = addTask;
-        window.deleteTask = deleteTask;
-        window.toggleTaskCompletion = toggleTaskCompletion;
-        window.addMicroStepToBoard = addMicroStepToBoard;
-        window.moveTask = moveTask;
-        window.moveNote = moveNote;
-        window.addTherapyNote = addTherapyNote;
-        window.toggleTherapyDiscussed = toggleTherapyDiscussed;
-        window.saveTherapyReflection = saveTherapyReflection;
-        window.deleteTherapyNote = deleteTherapyNote;
-        window.openSensoryGroundingExercise = openSensoryGroundingExercise;
-        window.closeSensoryModal = closeSensoryModal;
-        window.generateNewReminder = generateNewReminder;
-        window.openAddEventModal = openAddEventModal;
-        window.closeAddEventModal = closeAddEventModal;
-        window.addNewEvent = addNewEvent;
-        window.deleteEvent = deleteEvent;
-        window.addQuickNudge = addQuickNudge;
-        window.deleteNudge = deleteNudge;
-        window.dismissActiveNudge = dismissActiveNudge;
-
-        // ── VOICE ENGINE ────────────────────────────────────────────
-
-        let voiceModeActive = false;
-        let voiceRecognizer = null;
-        let currentAudio = null;
-        let voiceAutoRestart = false;
-        let recognizerRunning = false;
-
-        async function speakAsClara(text) {
-            // Clean markdown
-            let clean = text
-                .replace(/\*\*(.*?)\*\*/g, '$1')
-                .replace(/\*(.*?)\*/g, '$1')
-                .replace(/<[^>]+>/g, '')
-                .replace(/[#`]/g, '')
-                .trim();
-
-            // Soften words TTS engines stumble on or refuse to say
-            clean = clean
-                .replace(/\bfuck\b/gi, 'fudge')
-                .replace(/\bfucking\b/gi, 'freaking')
-                .replace(/\bshit\b/gi, 'shoot')
-                .replace(/\bbitch\b/gi, 'witch')
-                .replace(/\bass\b/gi, 'butt')
-                .replace(/\bdamn\b/gi, 'dang')
-                .replace(/\bcrap\b/gi, 'crud');
-
-            if (!clean) return;
-
-            setVoiceState('speaking');
-            document.getElementById('voiceInterruptBtn')?.classList.remove('hidden');
-
-            try {
-                await speakBrowser(clean);
-            } finally {
-                document.getElementById('voiceInterruptBtn')?.classList.add('hidden');
-                if (voiceModeActive && voiceAutoRestart) {
-                    setVoiceState('listening');
-                    startListening();
+        function renderSyncedChat() {
+            const box = document.getElementById('chatMessages');
+            if (!box) return;
+            box.innerHTML = '';
+            state.chatHistory.forEach(msg => {
+                const div = document.createElement('div');
+                div.className = msg.role === 'user' ? "flex items-start gap-3 justify-end" : "flex items-start gap-3";
+                const text = msg.parts?.[0]?.text || '';
+                if (msg.role === 'user') {
+                    div.innerHTML = `
+                        <div class="bg-neonpink-200/20 p-3.5 rounded-2xl rounded-tr-none text-ashgray-100 max-w-[85%] text-sm leading-relaxed">
+                            ${text}
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-neonpink-200 flex items-center justify-center text-white shrink-0 text-xs font-bold">You</div>
+                    `;
                 } else {
-                    setVoiceState('idle');
+                    div.innerHTML = `
+                        <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-200 shrink-0 text-xs">
+                            <i class="fa-solid fa-face-laugh-wink"></i>
+                        </div>
+                        <div class="bg-gothpurple-50/80 p-3.5 rounded-2xl rounded-tl-none text-ashgray-100 max-w-[85%] text-sm leading-relaxed">
+                            ${text}
+                        </div>
+                    `;
                 }
-            }
-        }
-
-        // Voice priority: best-sounding browser-native voices
-        // Mac neural voices (macOS 13+) are genuinely good — Zoe/Nicky are the best
-        const CLARA_VOICE_PRIORITY = [
-            // Mac neural — best quality, very natural
-            'Zoe', 'Nicky', 'Ava', 'Allison', 'Samantha', 'Susan',
-            // Mac regional accents — still good
-            'Karen', 'Moira', 'Fiona', 'Tessa', 'Victoria',
-            // Chrome/Edge neural
-            'Google UK English Female',
-            'Microsoft Aria Online', 'Microsoft Aria',
-            'Microsoft Jenny Online', 'Microsoft Jenny',
-            'Microsoft Sonia Online', 'Microsoft Sonia',
-            // Chrome basic
-            'Google US English',
-            // Edge legacy
-            'Microsoft Zira',
-        ];
-
-        let cachedVoice = null;
-
-        async function getBestVoice() {
-            if (cachedVoice) return cachedVoice;
-
-            // Voices load async — wait up to 2s for them
-            const voices = await new Promise(resolve => {
-                let v = window.speechSynthesis.getVoices();
-                if (v.length) { resolve(v); return; }
-                let attempts = 0;
-                const interval = setInterval(() => {
-                    v = window.speechSynthesis.getVoices();
-                    attempts++;
-                    if (v.length || attempts > 20) { clearInterval(interval); resolve(v); }
-                }, 100);
+                box.appendChild(div);
             });
-
-            // Try priority list first
-            for (const name of CLARA_VOICE_PRIORITY) {
-                const match = voices.find(v => v.name.includes(name) && /en/i.test(v.lang));
-                if (match) { cachedVoice = match; return match; }
-            }
-
-            // Fall back to any English female
-            const fallback = voices.find(v => /en/i.test(v.lang) && /female/i.test(v.name))
-                || voices.find(v => /en[-_]US/i.test(v.lang))
-                || voices.find(v => /en/i.test(v.lang))
-                || voices[0];
-
-            cachedVoice = fallback;
-            return fallback;
+            box.scrollTop = box.scrollHeight;
         }
 
-        function getTuning(voice) {
-            const name = voice?.name || '';
-            if (/Zoe/i.test(name))                         return { rate: 0.86, pitch: 1.00 }; // Mac neural — slightly slow, very natural
-            if (/Nicky/i.test(name))                       return { rate: 0.88, pitch: 0.97 };
-            if (/Ava|Allison|Susan/i.test(name))           return { rate: 0.88, pitch: 0.95 };
-            if (/Samantha/i.test(name))                    return { rate: 0.87, pitch: 0.93 };
-            if (/Karen|Moira|Tessa/i.test(name))           return { rate: 0.90, pitch: 0.92 };
-            if (/Fiona|Victoria/i.test(name))              return { rate: 0.91, pitch: 0.90 };
-            if (/Google UK/i.test(name))                   return { rate: 0.93, pitch: 0.88 };
-            if (/Aria.*Online|Jenny.*Online|Sonia.*Online/i.test(name)) return { rate: 0.89, pitch: 0.94 }; // Edge neural online — best MS voices
-            if (/Aria|Jenny|Sonia/i.test(name))            return { rate: 0.91, pitch: 0.93 };
-            if (/Google US/i.test(name))                   return { rate: 0.90, pitch: 0.90 };
-            return { rate: 0.90, pitch: 0.92 };
-        }
+        async function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
 
-        // Populate a voice picker in the voice mode area
-        async function populateVoicePicker() {
-            const picker = document.getElementById('claraVoicePicker');
-            if (!picker || picker.options.length > 1) return; // already populated
+            input.value = '';
+            const apiKey = await ensureApiKey();
+            if (!apiKey) return;
 
-            const voices = await new Promise(resolve => {
-                let v = window.speechSynthesis.getVoices();
-                if (v.length) { resolve(v); return; }
-                let attempts = 0;
-                const interval = setInterval(() => {
-                    v = window.speechSynthesis.getVoices();
-                    if (v.length || ++attempts > 20) { clearInterval(interval); resolve(v); }
-                }, 100);
-            });
+            // Add user message
+            state.chatHistory.push({ role: "user", parts: [{ text }] });
+            renderSyncedChat();
 
-            const englishVoices = voices.filter(v => /en/i.test(v.lang));
-            englishVoices.forEach(v => {
-                const opt = document.createElement('option');
-                opt.value = v.name;
-                opt.textContent = `${v.name} (${v.lang})`;
-                picker.appendChild(opt);
-            });
-
-            // Select cached voice if set
-            if (cachedVoice) picker.value = cachedVoice.name;
-        }
-
-        window.onVoicePickerChange = function() {
-            const picker = document.getElementById('claraVoicePicker');
-            if (!picker) return;
-            const voices = window.speechSynthesis.getVoices();
-            const chosen = voices.find(v => v.name === picker.value);
-            if (chosen) { cachedVoice = chosen; }
-        };
-
-        window.previewVoice = function() {
-            speakAsClara("Yeah, that's me. Clara. Let's get into it.");
-        };
-
-        // Chrome has a bug where utterances > ~200 chars cut off. Split into sentences.
-        function splitIntoChunks(text) {
-            return text
-                .replace(/([.!?])\s+/g, '$1|')
-                .split('|')
-                .map(s => s.trim())
-                .filter(Boolean);
-        }
-
-        async function speakBrowser(text) {
-            if (!('speechSynthesis' in window)) return;
-            window.speechSynthesis.cancel();
-            await new Promise(r => setTimeout(r, 80)); // brief gap after cancel
-
-            const voice = await getBestVoice();
-            const tuning = getTuning(voice);
-            const chunks = splitIntoChunks(text);
-
-            for (const chunk of chunks) {
-                if (!voiceModeActive && !voiceAutoRestart && currentAudio === null && chunks.indexOf(chunk) > 0) break; // interrupted
-                await new Promise(resolve => {
-                    const utter = new SpeechSynthesisUtterance(chunk);
-                    if (voice) utter.voice = voice;
-                    utter.rate   = tuning.rate;
-                    utter.pitch  = tuning.pitch;
-                    utter.volume = 1;
-                    utter.onend   = resolve;
-                    utter.onerror = resolve;
-
-                    // Chrome TTS keepalive hack — it silently stops after ~15s
-                    const keepalive = setInterval(() => {
-                        if (window.speechSynthesis.speaking) {
-                            window.speechSynthesis.pause();
-                            window.speechSynthesis.resume();
-                        }
-                    }, 10000);
-                    utter.onend = () => { clearInterval(keepalive); resolve(); };
-                    utter.onerror = () => { clearInterval(keepalive); resolve(); };
-
-                    window.speechSynthesis.speak(utter);
-                });
-            }
-        }
-
-        function buildRecognizer() {
-            const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if (!SR) return null;
-            const rec = new SR();
-            rec.lang = 'en-US';
-            rec.interimResults = true;
-            rec.continuous = false;
-            rec.maxAlternatives = 1;
-
-            let finalTranscript = '';
-            let interimTranscript = '';
-            let silenceTimer = null;
-
-            rec.onresult = e => {
-                finalTranscript = '';
-                interimTranscript = '';
-                for (let i = e.resultIndex; i < e.results.length; i++) {
-                    if (e.results[i].isFinal) finalTranscript += e.results[i][0].transcript;
-                    else interimTranscript += e.results[i][0].transcript;
-                }
-                // Show interim in input
-                const input = document.getElementById('chatInput');
-                if (input) input.value = finalTranscript || interimTranscript;
-
-                // Auto-send after 1.2s of silence once we have final
-                clearTimeout(silenceTimer);
-                if (finalTranscript) {
-                    silenceTimer = setTimeout(() => {
-                        rec.stop();
-                    }, 1200);
-                }
-            };
-
-            rec.onend = () => {
-                recognizerRunning = false;
-                const input = document.getElementById('chatInput');
-                const text = input?.value?.trim();
-                if (text && voiceModeActive) {
-                    voiceAutoRestart = true;
-                    setVoiceState('thinking');
-                    sendChatMessage(true); // pass flag to trigger TTS
-                } else if (voiceModeActive) {
-                    // Nothing heard — listen again
-                    setTimeout(() => { if (voiceModeActive) startListening(); }, 400);
-                }
-            };
-
-            rec.onerror = e => {
-                recognizerRunning = false;
-                if (e.error === 'not-allowed') {
-                    setVoiceState('idle');
-                    voiceModeActive = false;
-                    updateVoiceModeUI();
-                    showToast("Mic permission denied — voice mode needs the microphone.");
-                } else if (voiceModeActive) {
-                    setTimeout(() => { if (voiceModeActive) startListening(); }, 800);
-                }
-            };
-
-            return rec;
-        }
-
-        function startListening() {
-            if (recognizerRunning) return;
-            voiceRecognizer = buildRecognizer();
-            if (!voiceRecognizer) {
-                showToast("Speech recognition not supported in this browser. Try Chrome.");
-                return;
-            }
             try {
-                voiceRecognizer.start();
-                recognizerRunning = true;
-                setVoiceState('listening');
-            } catch(e) { recognizerRunning = false; }
-        }
+                // Call Gemini API
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`;
+                const payload = {
+                    systemInstruction: { parts: [{ text: CLARA_SYSTEM_PROMPT }] },
+                    contents: state.chatHistory
+                };
 
-        function stopListening() {
-            voiceAutoRestart = false;
-            recognizerRunning = false;
-            try { voiceRecognizer?.stop(); } catch(e) {}
-            voiceRecognizer = null;
-        }
-
-        function interruptClara() {
-            voiceAutoRestart = false;
-            window.speechSynthesis?.cancel();
-            currentAudio = null;
-            document.getElementById('voiceInterruptBtn')?.classList.add('hidden');
-            if (voiceModeActive) {
-                setVoiceState('listening');
-                startListening();
-            } else {
-                setVoiceState('idle');
-            }
-        }
-        window.interruptClara = interruptClara;
-
-        function tapToTalk() {
-            const btn = document.getElementById('tapToTalkBtn');
-            if (recognizerRunning) {
-                stopListening();
-                btn?.classList.remove('recording');
-            } else {
-                startListening();
-                btn?.classList.add('recording');
-            }
-        }
-        window.tapToTalk = tapToTalk;
-
-        function setVoiceState(state) {
-            const vis = document.getElementById('voiceVisualizer');
-            const label = document.getElementById('voiceStateText');
-            const statusLabel = document.getElementById('voiceStatusLabel');
-            const tapBtn = document.getElementById('tapToTalkBtn');
-            if (!vis) return;
-
-            vis.className = vis.className.replace(/\b(listening|thinking|speaking)\b/g, '').trim();
-
-            const states = {
-                idle: { text: '', status: 'Dump everything — chaos, tasks, people, feelings. I\'ll sort it.' },
-                listening: { text: 'Listening...', status: '🎙 Listening — talk to me', cls: 'listening' },
-                thinking: { text: 'Thinking...', status: '⏳ Processing...', cls: 'thinking' },
-                speaking: { text: 'Clara is talking', status: '🔊 Clara is speaking', cls: 'speaking' },
-            };
-
-            const s = states[state] || states.idle;
-            if (label) label.textContent = s.text;
-            if (statusLabel) statusLabel.textContent = s.status;
-            if (s.cls) vis.classList.add(s.cls);
-            if (tapBtn) tapBtn.classList.toggle('recording', state === 'listening');
-        }
-
-        async function toggleVoiceMode() {
-            if (voiceModeActive) {
-                voiceModeActive = false;
-                voiceAutoRestart = false;
-                stopListening();
-                window.speechSynthesis?.cancel();
-                document.getElementById('voiceVisualizer')?.classList.add('hidden');
-                document.getElementById('tapToTalkBtn')?.classList.add('hidden');
-                setVoiceState('idle');
-                updateVoiceModeUI();
-            } else {
-                voiceModeActive = true;
-                updateVoiceModeUI();
-                document.getElementById('voiceVisualizer')?.classList.remove('hidden');
-                document.getElementById('tapToTalkBtn')?.classList.remove('hidden');
-                populateVoicePicker();
-                startListening();
-            }
-        }
-        window.toggleVoiceMode = toggleVoiceMode;
-
-        function updateVoiceModeUI() {
-            const btn = document.getElementById('voiceModeBtn');
-            const icon = document.getElementById('voiceModeIcon');
-            const lbl = document.getElementById('voiceModeLabel');
-            if (!btn) return;
-            if (voiceModeActive) {
-                btn.classList.add('active');
-                if (icon) icon.className = 'fa-solid fa-microphone';
-                if (lbl) lbl.textContent = 'Voice On';
-            } else {
-                btn.classList.remove('active');
-                if (icon) icon.className = 'fa-solid fa-microphone-slash';
-                if (lbl) lbl.textContent = 'Voice Off';
-            }
-        }
-
-        // ── END VOICE ENGINE ────────────────────────────────────────
-
-        // ── ONBOARDING ─────────────────────────────────────────────
-        const ONBOARDING_STEPS = [
-            {
-                key: 'relationship',
-                question: "Okay first — what's the deal at home? What's your situation?",
-                type: 'chips',
-                options: [
-                    { label: '💍 Married', value: 'married' },
-                    { label: '💔 Divorced', value: 'divorced' },
-                    { label: '🖤 Widowed', value: 'widowed' },
-                    { label: '💞 Remarried', value: 'remarried' },
-                    { label: '🔥 It\'s complicated', value: 'complicated' },
-                    { label: '🦅 Single & flying solo', value: 'single' },
-                ]
-            },
-            {
-                key: 'partnerName',
-                question: null, // dynamic — set at runtime
-                type: 'text',
-                placeholder: 'What do you call them? (name, nickname, "that man", whatever works)',
-                showIf: p => ['married','remarried','complicated'].includes(p.relationship)
-            },
-            {
-                key: 'exName',
-                question: "And your ex — what do we call them when we're venting about custody drama?",
-                type: 'text',
-                placeholder: 'Name, "my ex", "the ex", your choice',
-                showIf: p => ['divorced','widowed','remarried'].includes(p.relationship)
-            },
-            {
-                key: 'momType',
-                question: "How are you showing up as a mom?",
-                type: 'chips',
-                multi: true,
-                options: [
-                    { label: '🧬 Bio mom', value: 'bio' },
-                    { label: '🌟 Bonus / step mom', value: 'bonus' },
-                    { label: '👵 Adoptive mom', value: 'adoptive' },
-                    { label: '🤱 Foster mom', value: 'foster' },
-                ]
-            },
-            {
-                key: 'bioKidsCount',
-                question: "How many bio kids do you have?",
-                type: 'chips',
-                options: [
-                    { label: '1', value: 1 },
-                    { label: '2', value: 2 },
-                    { label: '3', value: 3 },
-                    { label: '4', value: 4 },
-                    { label: '5+', value: 5 },
-                ],
-                showIf: p => p.momType?.includes('bio')
-            },
-            {
-                key: 'bonusKidsCount',
-                question: "And how many bonus/step kids?",
-                type: 'chips',
-                options: [
-                    { label: '1', value: 1 },
-                    { label: '2', value: 2 },
-                    { label: '3', value: 3 },
-                    { label: '4', value: 4 },
-                    { label: '5+', value: 5 },
-                ],
-                showIf: p => p.momType?.includes('bonus')
-            },
-            {
-                key: 'custodySchedule',
-                question: "Do you have a custody schedule with your ex?",
-                type: 'chips',
-                options: [
-                    { label: '✅ Yes — set schedule', value: 'fixed' },
-                    { label: '🔄 Flexible / we figure it out', value: 'flexible' },
-                    { label: '🏠 I have them full time', value: 'fulltime' },
-                    { label: '📅 They have them most of the time', value: 'primary_other' },
-                ],
-                showIf: p => ['divorced','remarried'].includes(p.relationship)
-            },
-            {
-                key: 'myDays',
-                question: "Which days do you have the kids? (tap all that apply)",
-                type: 'chips',
-                multi: true,
-                options: [
-                    { label: 'Mon', value: 'Monday' },
-                    { label: 'Tue', value: 'Tuesday' },
-                    { label: 'Wed', value: 'Wednesday' },
-                    { label: 'Thu', value: 'Thursday' },
-                    { label: 'Fri', value: 'Friday' },
-                    { label: 'Sat', value: 'Saturday' },
-                    { label: 'Sun', value: 'Sunday' },
-                ],
-                showIf: p => p.custodySchedule === 'fixed'
-            },
-            {
-                key: 'firstName',
-                question: "Last one — what do you want me to call you? Or I can just yell \"hey\".",
-                type: 'text',
-                placeholder: 'Your name or whatever you go by'
-            },
-        ];
-
-        let onboardingProfile = {};
-        let onboardingStepIndex = 0;
-        let onboardingMultiSelect = [];
-
-        function loadProfile() {
-            try {
-                const saved = localStorage.getItem('clara_profile');
-                if (saved) { state.profile = JSON.parse(saved); return true; }
-            } catch(e) {}
-            return false;
-        }
-
-        function saveProfile(profile) {
-            state.profile = profile;
-            try { localStorage.setItem('clara_profile', JSON.stringify(profile)); } catch(e) {}
-            applyProfileToUI(profile);
-        }
-
-        function applyProfileToUI(profile) {
-            if (!profile) return;
-            // Update board column headers
-            const homeHeader = document.querySelector('#homeTasksList')?.closest('.bg-gothpurple-100')?.querySelector('h3');
-            const kidsHeader = document.querySelector('#kidsTasksList')?.closest('.bg-gothpurple-100')?.querySelector('h3');
-            const partnerHeader = document.querySelector('#partnerTasksList')?.closest('.bg-gothpurple-100')?.querySelector('h3');
-
-            const totalKids = (profile.bioKidsCount || 0) + (profile.bonusKidsCount || 0);
-            const kidsLabel = profile.momType?.includes('bonus') && profile.momType?.includes('bio')
-                ? `The Whole Pack (${totalKids}) 👾`
-                : profile.momType?.includes('bonus')
-                    ? `Bonus Kids (${profile.bonusKidsCount || ''}) ⭐`
-                    : `The Gremlins (${profile.bioKidsCount || ''}) 👾`;
-
-            let partnerLabel = 'The Coparent / Other Adult 🙄';
-            if (profile.relationship === 'married' && profile.partnerName) partnerLabel = `${profile.partnerName} 💀`;
-            else if (profile.relationship === 'remarried' && profile.partnerName) partnerLabel = `${profile.partnerName} (Partner) 💀`;
-            else if (['divorced','widowed'].includes(profile.relationship) && profile.exName) partnerLabel = `${profile.exName} (Ex) 😬`;
-            else if (profile.relationship === 'single') partnerLabel = 'Outside Help / Others 🫠';
-
-            if (kidsHeader) kidsHeader.textContent = kidsLabel;
-            if (partnerHeader) partnerHeader.textContent = partnerLabel;
-        }
-
-        function buildProfileSystemContext(profile) {
-            if (!profile) return '';
-            const name = profile.firstName ? `Her name is ${profile.firstName}.` : '';
-            const rel = {
-                married: 'She is married.',
-                divorced: `She is divorced${profile.exName ? ` — her ex is referred to as "${profile.exName}"` : ''}.`,
-                widowed: `She is widowed${profile.exName ? ` — her late partner is "${profile.exName}"` : ''}.`,
-                remarried: `She is remarried${profile.partnerName ? ` — her partner is "${profile.partnerName}"` : ''}${profile.exName ? `, and has an ex named "${profile.exName}"` : ''}.`,
-                complicated: `Her relationship status is complicated${profile.partnerName ? ` — she refers to her partner as "${profile.partnerName}"` : ''}.`,
-                single: 'She is a single mom.',
-            }[profile.relationship] || '';
-            const partner = profile.partnerName && !['divorced','single'].includes(profile.relationship) ? `Her partner's name is ${profile.partnerName}.` : '';
-            const kids = [];
-            if (profile.bioKidsCount) kids.push(`${profile.bioKidsCount} bio kid${profile.bioKidsCount > 1 ? 's' : ''}`);
-            if (profile.bonusKidsCount) kids.push(`${profile.bonusKidsCount} bonus/step kid${profile.bonusKidsCount > 1 ? 's' : ''}`);
-            const kidsStr = kids.length ? `She has ${kids.join(' and ')}.` : '';
-            const custody = profile.custodySchedule ? {
-                fixed: `She has a fixed custody schedule. Her days with the kids: ${(profile.myDays || []).join(', ') || 'not specified'}.`,
-                flexible: 'Her custody schedule is flexible.',
-                fulltime: 'She has the kids full time.',
-                primary_other: 'The other parent has primary custody.',
-            }[profile.custodySchedule] || '' : '';
-            return [name, rel, partner, kidsStr, custody].filter(Boolean).join(' ');
-        }
-
-        function getActiveOnboardingSteps() {
-            return ONBOARDING_STEPS.filter(s => !s.showIf || s.showIf(onboardingProfile));
-        }
-
-        function startOnboarding() {
-            onboardingProfile = {};
-            onboardingStepIndex = 0;
-            onboardingMultiSelect = [];
-            document.getElementById('onboardingModal').classList.remove('hidden');
-            document.getElementById('onboardingModal').classList.add('flex');
-            renderOnboardingStep();
-        }
-
-        function renderOnboardingStep() {
-            const steps = getActiveOnboardingSteps();
-            const step = steps[onboardingStepIndex];
-            if (!step) { finishOnboarding(); return; }
-
-            const progress = Math.round(((onboardingStepIndex) / steps.length) * 100);
-            document.getElementById('onboardingProgress').style.width = progress + '%';
-            document.getElementById('onboardingStepCounter').textContent = `${onboardingStepIndex + 1} of ${steps.length}`;
-
-            let question = step.question;
-            if (step.key === 'partnerName') {
-                question = onboardingProfile.relationship === 'remarried'
-                    ? "And your current partner — what do you call them?"
-                    : "What do you call your partner? (name, nickname, 'my husband', anything)";
-            }
-
-            document.getElementById('onboardingQuestion').textContent = question;
-            onboardingMultiSelect = Array.isArray(onboardingProfile[step.key]) ? [...onboardingProfile[step.key]] : [];
-
-            const inputArea = document.getElementById('onboardingInputArea');
-            inputArea.innerHTML = '';
-
-            if (step.type === 'chips') {
-                const wrap = document.createElement('div');
-                wrap.className = 'flex flex-wrap gap-2 justify-center';
-                step.options.forEach(opt => {
-                    const btn = document.createElement('button');
-                    const isSelected = step.multi
-                        ? onboardingMultiSelect.includes(opt.value)
-                        : onboardingProfile[step.key] === opt.value;
-                    btn.className = `px-4 py-2.5 rounded-2xl text-sm font-bold transition-all border ${isSelected
-                        ? 'bg-neonpink-200 border-neonpink-200 text-white'
-                        : 'bg-gothpurple-100 border-gothpurple-300/50 text-ashgray-100 hover:border-neonpink-200 hover:text-neonpink-100'}`;
-                    btn.textContent = opt.label;
-                    btn.onclick = () => {
-                        if (step.multi) {
-                            if (onboardingMultiSelect.includes(opt.value)) {
-                                onboardingMultiSelect = onboardingMultiSelect.filter(v => v !== opt.value);
-                            } else {
-                                onboardingMultiSelect.push(opt.value);
-                            }
-                            onboardingProfile[step.key] = [...onboardingMultiSelect];
-                            renderOnboardingStep();
-                        } else {
-                            onboardingProfile[step.key] = opt.value;
-                            advanceOnboarding();
-                        }
-                    };
-                    wrap.appendChild(btn);
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
                 });
-                inputArea.appendChild(wrap);
 
-                if (step.multi) {
-                    const cont = document.createElement('button');
-                    cont.className = 'mt-4 px-8 py-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-full font-bold text-sm transition-all';
-                    cont.textContent = onboardingMultiSelect.length ? 'Got it →' : 'Skip →';
-                    cont.onclick = advanceOnboarding;
-                    inputArea.appendChild(cont);
+                if (!response.ok) throw new Error("API error");
+                const data = await response.json();
+                
+                const claraText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "I'm having a brain fog moment. Try again?";
+                
+                // Parse JSON response
+                let parsed = { reply: claraText, actions: { tasks: [], events: [], therapyNotes: [], microSteps: [] } };
+                try {
+                    parsed = JSON.parse(claraText);
+                } catch(e) {
+                    // If not JSON, wrap in default
                 }
 
-            } else if (step.type === 'text') {
-                const wrap = document.createElement('div');
-                wrap.className = 'flex gap-2 w-full max-w-sm';
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.placeholder = step.placeholder || '';
-                input.value = onboardingProfile[step.key] || '';
-                input.className = 'flex-grow p-3 text-sm rounded-2xl border border-gothpurple-300/40 bg-gothblack-200 text-ashgray-100 focus:outline-none focus:ring-2 focus:ring-neonpink-200';
-                input.onkeydown = e => { if (e.key === 'Enter') { onboardingProfile[step.key] = input.value.trim() || null; advanceOnboarding(); } };
-                const btn = document.createElement('button');
-                btn.className = 'px-5 py-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-2xl font-bold text-sm transition-all';
-                btn.textContent = '→';
-                btn.onclick = () => { onboardingProfile[step.key] = input.value.trim() || null; advanceOnboarding(); };
-                const skip = document.createElement('button');
-                skip.className = 'text-xs text-ashgray-300 hover:text-ashgray-100 font-semibold';
-                skip.textContent = 'Skip';
-                skip.onclick = () => { onboardingProfile[step.key] = null; advanceOnboarding(); };
-                wrap.appendChild(input);
-                wrap.appendChild(btn);
-                inputArea.appendChild(wrap);
-                inputArea.appendChild(skip);
-                setTimeout(() => input.focus(), 50);
+                // Add Clara's response
+                state.chatHistory.push({ role: "model", parts: [{ text: parsed.reply || claraText }] });
+                
+                // Process actions
+                if (parsed.actions?.tasks) {
+                    parsed.actions.tasks.forEach(t => {
+                        state.tasks.push({ id: Date.now() + Math.random(), ...t, completed: false });
+                    });
+                }
+                if (parsed.actions?.therapyNotes) {
+                    parsed.actions.therapyNotes.forEach(n => {
+                        state.therapyNotes.push({ id: Date.now() + Math.random(), ...n, discussed: false });
+                    });
+                }
+
+                persistAll();
+                renderSyncedChat();
+                renderTasks();
+                renderTherapyNotes();
+                showToast("Clara replied + sorted stuff!");
+
+            } catch(err) {
+                showToast("Oops: " + err.message);
+                state.chatHistory[state.chatHistory.length - 1] = { 
+                    role: "model", 
+                    parts: [{ text: "Connection hiccup. Check your API key?" }] 
+                };
+                renderSyncedChat();
             }
         }
 
-        function advanceOnboarding() {
-            onboardingStepIndex++;
-            // Recalculate active steps as profile fills in
-            const steps = getActiveOnboardingSteps();
-            if (onboardingStepIndex >= steps.length) { finishOnboarding(); return; }
-            renderOnboardingStep();
+        function handleChatKeyPress(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendChatMessage();
+            }
         }
 
-        function finishOnboarding() {
-            saveProfile(onboardingProfile);
-            document.getElementById('onboardingModal').classList.add('hidden');
-            document.getElementById('onboardingModal').classList.remove('flex');
-            // Inject a warm personalized first message from Clara
-            const name = onboardingProfile.firstName ? onboardingProfile.firstName : null;
-            const greeting = name ? `Okay ${name}, I'm all caught up.` : `Okay, I'm all caught up.`;
-            const kids = [];
-            if (onboardingProfile.bioKidsCount) kids.push(`${onboardingProfile.bioKidsCount} bio kid${onboardingProfile.bioKidsCount > 1 ? 's' : ''}`);
-            if (onboardingProfile.bonusKidsCount) kids.push(`${onboardingProfile.bonusKidsCount} bonus kid${onboardingProfile.bonusKidsCount > 1 ? 's' : ''}`);
-            const kidsStr = kids.length ? ` ${kids.join(' and ')} —` : '';
-            const situationStr = {
-                married: onboardingProfile.partnerName ? ` You've got ${onboardingProfile.partnerName} in the picture,` : ' Married life, the full chaos,',
-                divorced: onboardingProfile.exName ? ` Divorced, co-parenting with ${onboardingProfile.exName},` : ' Divorced, co-parenting,',
-                single: ' Flying solo —',
-                remarried: ' Remarried, blended family chaos —',
-                widowed: ' Widowed and still holding it all together —',
-                complicated: ' Complicated situation —',
-            }[onboardingProfile.relationship] || '';
-            const closingLine = `${kidsStr} got it. Now vent to me. What's going on today?`;
-            const fullMsg = `${greeting}${situationStr}${closingLine} I've got your board set up and I'm ready to sort whatever you throw at me. Don't hold back.`;
-            appendClaraMessage(fullMsg);
-            // Offer voice mode right after onboarding
-            setTimeout(() => {
-                const box = document.getElementById('chatMessages');
-                if (!box) return;
-                const pill = document.createElement('div');
-                pill.className = 'flex justify-center';
-                pill.innerHTML = `<button onclick="toggleVoiceMode(); this.parentElement.remove();" class="px-4 py-2 rounded-full bg-gothpurple-50/80 border border-gothpurple-300/50 text-xs font-bold text-neonpink-100 hover:bg-neonpink-200 hover:text-white hover:border-neonpink-200 transition-all"><i class="fa-solid fa-microphone mr-1.5"></i>Turn on voice — talk to me out loud</button>`;
-                box.appendChild(pill);
-                box.scrollTop = box.scrollHeight;
-            }, 400);
+        function renderTasks() {
+            const lists = {
+                home: document.getElementById('homeTasksList'),
+                kids: document.getElementById('kidsTasksList'),
+                partner: document.getElementById('partnerTasksList'),
+            };
+            const counts = { home: 0, kids: 0, partner: 0 };
+
+            Object.values(lists).forEach(l => l.innerHTML = '');
+
+            state.tasks.forEach(task => {
+                const isLowEnergy = state.lowEnergyMode && task.energy !== 'low';
+                if (isLowEnergy) return;
+
+                counts[task.category]++;
+                const taskCard = document.createElement('div');
+                taskCard.className = `p-3 rounded-xl border flex items-start gap-2 text-xs ${task.completed ? 'bg-gothpurple-50/40 border-gothpurple-300/20 opacity-60' : 'bg-gothpurple-50/60 border-gothpurple-300/40'}`;
+                taskCard.innerHTML = `
+                    <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTaskCompletion(${task.id})" class="mt-1">
+                    <span class="flex-grow text-ashgray-100 ${task.completed ? 'line-through' : ''}">${task.text}</span>
+                    <button onclick="deleteTask(${task.id})" class="text-ashgray-300 hover:text-rose-400 text-xs"><i class="fa-solid fa-trash"></i></button>
+                `;
+                lists[task.category].appendChild(taskCard);
+            });
+
+            document.getElementById('homeCount').innerText = counts.home;
+            document.getElementById('kidsCount').innerText = counts.kids;
+            document.getElementById('partnerCount').innerText = counts.partner;
+        }
+
+        function toggleTaskCompletion(id) {
+            const task = state.tasks.find(t => t.id === id);
+            if (task) {
+                task.completed = !task.completed;
+                renderTasks();
+                lsSave(LS_KEYS.tasks, state.tasks);
+            }
+        }
+
+        function deleteTask(id) {
+            state.tasks = state.tasks.filter(t => t.id !== id);
+            renderTasks();
+            lsSave(LS_KEYS.tasks, state.tasks);
+        }
+
+        function renderTherapyNotes() {
+            const lists = {
+                individual: document.getElementById('individualTherapyList'),
+                couples: document.getElementById('couplesTherapyList'),
+                family: document.getElementById('familyTherapyList'),
+            };
+
+            Object.values(lists).forEach(l => l.innerHTML = '');
+
+            state.therapyNotes.forEach(note => {
+                const noteCard = document.createElement('div');
+                noteCard.className = "p-3 rounded-xl bg-gothpurple-50/60 border border-gothpurple-300/40 text-xs text-ashgray-100 space-y-2";
+                noteCard.innerHTML = `
+                    <div class="flex items-start justify-between gap-2">
+                        <p class="flex-grow">${note.text}</p>
+                        <button onclick="deleteTherapyNote(${note.id})" class="text-ashgray-300 hover:text-rose-400 shrink-0"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+                lists[note.category].appendChild(noteCard);
+            });
+        }
+
+        function deleteTherapyNote(id) {
+            state.therapyNotes = state.therapyNotes.filter(n => n.id !== id);
+            renderTherapyNotes();
+            lsSave(LS_KEYS.notes, state.therapyNotes);
+        }
+
+        function addTherapyNote() {
+            const text = document.getElementById('therapyNoteText').value.trim();
+            const category = document.getElementById('therapyTypeSelect').value;
+            if (!text) return;
+            state.therapyNotes.push({ id: Date.now(), text, category, discussed: false });
+            document.getElementById('therapyNoteText').value = '';
+            renderTherapyNotes();
+            lsSave(LS_KEYS.notes, state.therapyNotes);
+            showToast("Added to therapy notes!");
+        }
+
+        function toggleLowEnergyMode() {
+            state.lowEnergyMode = !state.lowEnergyMode;
+            document.getElementById('lowEnergyBanner').classList.toggle('hidden');
+            renderTasks();
+        }
+
+        function openOverwhelmModal() {
+            document.getElementById('overwhelmModal').classList.remove('hidden');
+            document.getElementById('overwhelmModal').classList.add('flex');
+        }
+
+        function closeOverwhelmModal() {
+            document.getElementById('overwhelmModal').classList.add('hidden');
+            document.getElementById('overwhelmModal').classList.remove('flex');
+        }
+
+        function resetChat() {
+            state.chatHistory = [
+                { role: "user", parts: [{ text: "Introduce yourself." }] },
+                { role: "model", parts: [{ text: "Hey. I'm Clara. Ready to dump?" }] }
+            ];
+            lsSave(LS_KEYS.chat, state.chatHistory);
+            renderSyncedChat();
+            showToast("Chat cleared!");
+        }
+
+        // Two-week horizon
+        const DAYS_OF_WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const BASE_DATE = new Date(); BASE_DATE.setHours(0,0,0,0);
+
+        function renderHorizon() {
+            const week1 = document.getElementById('week1Timeline');
+            const week2 = document.getElementById('week2Timeline');
+            if (!week1 || !week2) return;
+
+            week1.innerHTML = '';
+            week2.innerHTML = '';
+
+            for (let i = 0; i < 14; i++) {
+                const d = new Date(BASE_DATE);
+                d.setDate(BASE_DATE.getDate() + i);
+                const dayName = DAYS_OF_WEEK[d.getDay()];
+                const dateStr = `${d.toLocaleString('en-US', { month: 'short' })} ${d.getDate()}`;
+
+                const card = document.createElement('div');
+                card.className = "p-3 rounded-2xl border border-gothpurple-300/30 bg-gothpurple-100 text-xs space-y-2";
+                card.innerHTML = `
+                    <div class="font-bold text-ashgray-50">${i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : dayName} <span class="text-ashgray-300 font-normal">${dateStr}</span></div>
+                    <div class="text-ashgray-300 italic">No events</div>
+                `;
+
+                if (i < 7) week1.appendChild(card);
+                else week2.appendChild(card);
+            }
+        }
+
+        function openAddEventModal(dayOffset) {
+            document.getElementById('addEventModal').classList.remove('hidden');
+            document.getElementById('addEventModal').classList.add('flex');
+        }
+
+        function closeAddEventModal() {
+            document.getElementById('addEventModal').classList.add('hidden');
+            document.getElementById('addEventModal').classList.remove('flex');
+        }
+
+        function addNewEvent() {
+            const text = document.getElementById('eventTitleInput').value.trim();
+            if (!text) return;
+            showToast("Event added!");
+            closeAddEventModal();
         }
 
         function openOnboarding() {
-            startOnboarding();
+            showToast("Welcome to Clara! Add an event to get started.");
         }
 
+        function generateNewReminder() {
+            showToast("You're doing fine.");
+        }
+
+        // Initialize
+        initializeApp();
+
+        // Bind to window
+        window.switchTab = switchTab;
+        window.sendChatMessage = sendChatMessage;
+        window.handleChatKeyPress = handleChatKeyPress;
+        window.resetChat = resetChat;
+        window.toggleTaskCompletion = toggleTaskCompletion;
+        window.deleteTask = deleteTask;
+        window.toggleLowEnergyMode = toggleLowEnergyMode;
+        window.renderTasks = renderTasks;
+        window.renderTherapyNotes = renderTherapyNotes;
+        window.deleteTherapyNote = deleteTherapyNote;
+        window.addTherapyNote = addTherapyNote;
+        window.openOverwhelmModal = openOverwhelmModal;
+        window.closeOverwhelmModal = closeOverwhelmModal;
+        window.openAddEventModal = openAddEventModal;
+        window.closeAddEventModal = closeAddEventModal;
+        window.addNewEvent = addNewEvent;
         window.openOnboarding = openOnboarding;
-        window.advanceOnboarding = advanceOnboarding;
-
-        // ── END ONBOARDING ──────────────────────────────────────────
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const hasProfile = loadProfile();
-            initializeApp();
-            setupDropZones();
-            if (!getApiKey()) {
-                document.getElementById('apiKeyModal').classList.remove('hidden');
-                document.getElementById('apiKeyModal').classList.add('flex');
-            } else if (!hasProfile) {
-                setTimeout(startOnboarding, 600);
-            } else {
-                applyProfileToUI(state.profile);
-            }
-        });
+        window.generateNewReminder = generateNewReminder;
     </script>
-
-    <!-- API KEY MODAL -->
-    <div id="apiKeyModal" class="hidden fixed inset-0 z-50 bg-gothblack-200/95 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-gothpurple-100 rounded-3xl border border-gothpurple-300/40 shadow-2xl w-full max-w-md p-8 flex flex-col gap-5">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-gothpurple-200 flex items-center justify-center border border-gothpurple-300 shrink-0 text-neonpink-200">
-                    <i class="fa-solid fa-key"></i>
-                </div>
-                <div>
-                    <p class="font-serif font-bold text-neonpink-200 text-base">One quick thing —</p>
-                    <p class="text-[11px] text-ashgray-300 font-medium">Clara needs a Gemini API key to think. It's free.</p>
-                </div>
-            </div>
-            <ol class="text-xs text-ashgray-200 space-y-1.5 leading-relaxed">
-                <li><span class="text-neonpink-200 font-bold">1.</span> Go to <a href="https://aistudio.google.com/apikey" target="_blank" class="text-neonpink-200 underline font-semibold">aistudio.google.com/apikey</a></li>
-                <li><span class="text-neonpink-200 font-bold">2.</span> Sign in with Google → click <strong>Create API Key</strong></li>
-                <li><span class="text-neonpink-200 font-bold">3.</span> Copy it and paste it below</li>
-            </ol>
-            <div class="flex gap-2">
-                <input id="apiKeyInput" type="password" placeholder="Paste Gemini API key here..." class="flex-grow p-3 text-sm rounded-2xl border border-gothpurple-300/40 bg-gothblack-200 text-ashgray-100 focus:outline-none focus:ring-2 focus:ring-neonpink-200" onkeydown="if(event.key==='Enter') submitApiKey()">
-                <button onclick="submitApiKey()" class="px-5 py-3 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-2xl font-bold text-sm transition-all">Save</button>
-            </div>
-            <p class="text-[10px] text-ashgray-300 text-center">Stored only on your device. Never sent anywhere except Google's API.</p>
-        </div>
-    </div>
-
-    <!-- Onboarding Modal -->
-    <div id="onboardingModal" class="hidden fixed inset-0 z-50 bg-gothblack-200/95 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-gothpurple-100 rounded-3xl border border-gothpurple-300/40 shadow-2xl w-full max-w-lg p-8 flex flex-col gap-6">
-            <!-- Header -->
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-gothpurple-200 flex items-center justify-center border border-gothpurple-300 shrink-0">
-                    <svg class="w-7 h-7 breathe-animation" viewBox="0 0 100 100">
-                        <path d="M 50,22 C 32,22 28,40 28,54 C 28,64 36,68 36,78 L 64,78 C 64,68 72,64 72,54 C 72,40 68,22 50,22 Z" fill="#ebdff5"/>
-                        <rect x="42" y="78" width="16" height="10" rx="3" fill="#ebdff5"/>
-                        <line x1="46" y1="78" x2="46" y2="88" stroke="#0a0812" stroke-width="2.5"/>
-                        <line x1="50" y1="78" x2="50" y2="88" stroke="#0a0812" stroke-width="2.5"/>
-                        <line x1="54" y1="78" x2="54" y2="88" stroke="#0a0812" stroke-width="2.5"/>
-                        <circle cx="41" cy="48" r="6" fill="#0a0812"/>
-                        <circle cx="59" cy="48" r="6" fill="#0a0812"/>
-                        <polygon points="50,56 46,64 54,64" fill="#0a0812"/>
-                        <path d="M 33,26 C 18,16 16,42 32,32 Z" fill="#ff2d95" stroke="#cc0066" stroke-width="1"/>
-                        <path d="M 37,30 C 52,20 50,46 34,36 Z" fill="#ff2d95" stroke="#cc0066" stroke-width="1"/>
-                        <circle cx="34" cy="31" r="4.5" fill="#ff80c2"/>
-                    </svg>
-                </div>
-                <div>
-                    <p class="font-serif font-bold text-neonpink-200 text-base">Hey. Before we start —</p>
-                    <p class="text-[11px] text-ashgray-300 font-medium">I need to know what I'm working with. Takes 30 seconds.</p>
-                </div>
-                <span class="ml-auto text-[10px] text-ashgray-300 font-semibold" id="onboardingStepCounter"></span>
-            </div>
-
-            <!-- Progress bar -->
-            <div class="h-1.5 bg-gothpurple-200 rounded-full overflow-hidden">
-                <div id="onboardingProgress" class="h-full bg-neonpink-200 rounded-full transition-all duration-300" style="width:0%"></div>
-            </div>
-
-            <!-- Question -->
-            <p id="onboardingQuestion" class="font-serif text-lg font-bold text-ashgray-100 leading-snug text-center"></p>
-
-            <!-- Input area -->
-            <div id="onboardingInputArea" class="flex flex-col items-center gap-3 min-h-[100px] justify-center"></div>
-        </div>
-    </div>
 </body>
 </html>
