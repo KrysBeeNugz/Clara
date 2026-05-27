@@ -613,7 +613,6 @@ RULES: Be sarcastic, blunt, loyal. NO toxic positivity. Extract only real, speci
             events: 'clara_events',
             notes: 'clara_notes',
             nudges: 'clara_nudges',
-            apiKey: 'clara_gemini_key',
         };
 
         function lsSave(key, data) {
@@ -643,35 +642,11 @@ RULES: Be sarcastic, blunt, loyal. NO toxic positivity. Extract only real, speci
             lsSave(LS_KEYS.nudges, state.nudges);
         }
 
-        function getApiKey() {
-            return localStorage.getItem(LS_KEYS.apiKey) || null;
-        }
-
-        function saveApiKey(key) {
-            localStorage.setItem(LS_KEYS.apiKey, key);
-        }
-
-        window.submitApiKey = function() {
-            const input = document.getElementById('apiKeyInput');
-            const key = input?.value?.trim();
-            if (!key) { showToast("Paste your API key first!"); return; }
-            saveApiKey(key);
-            document.getElementById('apiKeyModal').classList.add('hidden');
-            document.getElementById('apiKeyModal').classList.remove('flex');
-            input.value = '';
-            showToast("API key saved!");
-        };
-
-        async function ensureApiKey() {
-            const key = getApiKey();
-            if (key) return key;
-            
-            return new Promise(resolve => {
-                document.getElementById('apiKeyModal').classList.remove('hidden');
-                document.getElementById('apiKeyModal').classList.add('flex');
-                window._apiKeyResolve = resolve;
-            });
-        }
+        const GEMINI_API_KEY = 'AIzaSyB_zuJjUSLW9k--q5tipYFtqerDk4kC1DY';
+        function getApiKey() { return GEMINI_API_KEY; }
+        function saveApiKey(key) {}
+        window.submitApiKey = function() {};
+        async function ensureApiKey() { return GEMINI_API_KEY; }
 
         function initializeApp() {
             restoreFromLocalStorage();
@@ -746,6 +721,25 @@ RULES: Be sarcastic, blunt, loyal. NO toxic positivity. Extract only real, speci
             box.scrollTop = box.scrollHeight;
         }
 
+        function appendMicroStepsCard(taskName, steps) {
+            const box = document.getElementById('chatMessages');
+            if (!box || !steps?.length) return;
+            const div = document.createElement('div');
+            div.className = "flex items-start gap-3";
+            const stepsHtml = steps.map((s, i) => `
+                <div class="flex items-center gap-2 p-2 rounded-xl bg-gothpurple-100 text-xs font-semibold text-ashgray-100 border border-gothpurple-300/30">
+                    <span class="text-neonpink-200 font-bold shrink-0">${i+1}.</span><span>${s}</span>
+                </div>`).join('');
+            div.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-gothpurple-50 flex items-center justify-center text-neonpink-200 shrink-0 text-xs"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="bg-gothpurple-50/60 p-3.5 rounded-2xl rounded-tl-none text-ashgray-100 max-w-[90%] w-full space-y-2">
+                    <p class="text-xs font-bold text-neonpink-100 uppercase tracking-wide">Steps: ${taskName}</p>
+                    ${stepsHtml}
+                </div>`;
+            box.appendChild(div);
+            box.scrollTop = box.scrollHeight;
+        }
+
         async function sendChatMessage() {
             const input = document.getElementById('chatInput');
             const text = input.value.trim();
@@ -760,60 +754,88 @@ RULES: Be sarcastic, blunt, loyal. NO toxic positivity. Extract only real, speci
             renderSyncedChat();
 
             try {
-                // Call Gemini API
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`;
+                // Trim to last 16 messages to keep tokens low and avoid rate limits
+                const trimmedHistory = state.chatHistory.slice(-16);
+
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                 const payload = {
                     systemInstruction: { parts: [{ text: CLARA_SYSTEM_PROMPT }] },
-                    contents: state.chatHistory
+                    contents: trimmedHistory,
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        maxOutputTokens: 800,
+                        temperature: 0.9,
+                    }
                 };
 
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+                // Retry up to 3 times on 429 with backoff
+                let response;
+                for (let attempt = 0; attempt < 3; attempt++) {
+                    response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (response.status !== 429) break;
+                    await new Promise(r => setTimeout(r, (attempt + 1) * 5000));
+                }
 
-                if (!response.ok) throw new Error("API error");
+                if (!response.ok) {
+                    const errBody = await response.text().catch(() => '');
+                    throw new Error(`${response.status}: ${errBody.slice(0,100)}`);
+                }
+
                 const data = await response.json();
-                
-                const claraText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "I'm having a brain fog moment. Try again?";
-                
+                const claraText = data?.candidates?.[0]?.content?.parts?.[0]?.text || '{"reply":"Brain fog. Try again?","actions":{"tasks":[],"events":[],"therapyNotes":[],"microSteps":[]}}';
+
                 // Parse JSON response
                 let parsed = { reply: claraText, actions: { tasks: [], events: [], therapyNotes: [], microSteps: [] } };
                 try {
-                    parsed = JSON.parse(claraText);
+                    const clean = claraText.replace(/^```json\s*/,'').replace(/```\s*$/,'').trim();
+                    parsed = JSON.parse(clean);
                 } catch(e) {
-                    // If not JSON, wrap in default
+                    parsed.reply = claraText; // fallback to raw text
                 }
 
-                // Add Clara's response
+                // Add Clara's response (plain text only — keeps history lean)
                 state.chatHistory.push({ role: "model", parts: [{ text: parsed.reply || claraText }] });
-                
+
                 // Process actions
-                if (parsed.actions?.tasks) {
+                if (parsed.actions?.tasks?.length) {
                     parsed.actions.tasks.forEach(t => {
                         state.tasks.push({ id: Date.now() + Math.random(), ...t, completed: false });
                     });
                 }
-                if (parsed.actions?.therapyNotes) {
+                if (parsed.actions?.events?.length) {
+                    parsed.actions.events.forEach(ev => {
+                        state.events.push({ id: Date.now() + Math.random(), ...ev });
+                    });
+                }
+                if (parsed.actions?.therapyNotes?.length) {
                     parsed.actions.therapyNotes.forEach(n => {
                         state.therapyNotes.push({ id: Date.now() + Math.random(), ...n, discussed: false });
                     });
+                }
+                if (parsed.actions?.microSteps?.length) {
+                    parsed.actions.microSteps.forEach(ms => appendMicroStepsCard(ms.task, ms.steps));
                 }
 
                 persistAll();
                 renderSyncedChat();
                 renderTasks();
                 renderTherapyNotes();
-                showToast("Clara replied + sorted stuff!");
+                renderHorizon();
 
             } catch(err) {
-                showToast("Oops: " + err.message);
-                state.chatHistory[state.chatHistory.length - 1] = { 
-                    role: "model", 
-                    parts: [{ text: "Connection hiccup. Check your API key?" }] 
-                };
+                console.error('Clara error:', err.message);
+                const errMsg = err.message?.startsWith('429')
+                    ? "Rate limit — give me 10 seconds and try again."
+                    : err.message?.match(/401|403/)
+                        ? "API key issue — tap API Key in the header and re-enter it."
+                        : "Something went sideways: " + err.message;
+                state.chatHistory.push({ role: "model", parts: [{ text: errMsg }] });
                 renderSyncedChat();
+                persistAll();
             }
         }
 
