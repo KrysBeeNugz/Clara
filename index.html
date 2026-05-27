@@ -150,6 +150,12 @@
                     <span class="hidden md:inline">My Setup</span>
                 </button>
 
+                <!-- API Key -->
+                <button onclick="localStorage.removeItem('clara_gemini_key'); showToast('Key cleared — send a message to re-enter.');" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold transition-all bg-gothpurple-100 hover:bg-gothpurple-50 text-ashgray-200">
+                    <i class="fa-solid fa-key text-neonpink-200"></i>
+                    <span class="hidden md:inline">API Key</span>
+                </button>
+
                 <!-- Data Backup Status Button -->
                 <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gothpurple-300 text-xs font-semibold bg-gothpurple-100 text-ashgray-200 shadow-sm">
                     <i class="fa-solid fa-floppy-disk text-neonpink-200"></i>
@@ -616,11 +622,41 @@ RULES: Be sarcastic, blunt, loyal. NO toxic positivity. Extract only real, speci
             lsSave(LS_KEYS.nudges, state.nudges);
         }
 
-        const GEMINI_API_KEY = 'AIzaSyB_zuJjUSLW9k--q5tipYFtqerDk4kC1DY';
-        function getApiKey() { return GEMINI_API_KEY; }
-        function saveApiKey(key) {}
-        window.submitApiKey = function() {};
-        async function ensureApiKey() { return GEMINI_API_KEY; }
+        const GEMINI_API_KEY = null; // set via prompt on first use
+        function getApiKey() { return localStorage.getItem('clara_gemini_key') || null; }
+        function saveApiKey(key) { localStorage.setItem('clara_gemini_key', key); }
+        async function ensureApiKey() {
+            const key = getApiKey();
+            if (key) return key;
+            return new Promise(resolve => {
+                window._apiKeyResolve = resolve;
+                // Build inline prompt in chat
+                const box = document.getElementById('chatMessages');
+                if (!box) { resolve(null); return; }
+                const div = document.createElement('div');
+                div.id = 'apiKeyPromptInline';
+                div.className = 'flex flex-col items-center gap-3 p-4 bg-gothpurple-50/60 rounded-2xl border border-gothpurple-300/40 text-center mx-2';
+                div.innerHTML = `
+                    <p class="text-sm font-bold text-ashgray-100 font-serif">Clara needs a Gemini API key to think.</p>
+                    <p class="text-xs text-ashgray-200">Free at <a href="https://aistudio.google.com/apikey" target="_blank" class="text-neonpink-200 underline font-semibold">aistudio.google.com/apikey</a> — create a key, paste it below.</p>
+                    <div class="flex gap-2 w-full max-w-sm">
+                        <input id="inlineApiKeyInput" type="password" placeholder="Paste API key..." class="flex-grow p-3 text-xs rounded-xl border border-gothpurple-300/40 bg-gothblack-200 text-ashgray-100 focus:outline-none focus:ring-2 focus:ring-neonpink-200">
+                        <button onclick="window.submitInlineApiKey()" class="px-4 py-2 bg-neonpink-200 hover:bg-neonpink-300 text-white rounded-xl text-xs font-bold transition-all">Save</button>
+                    </div>
+                    <p class="text-[10px] text-ashgray-300">Stored only on your device. Never shared.</p>
+                `;
+                box.appendChild(div);
+                box.scrollTop = box.scrollHeight;
+            });
+        }
+        window.submitInlineApiKey = function() {
+            const input = document.getElementById('inlineApiKeyInput');
+            const key = input?.value?.trim();
+            if (!key) return;
+            saveApiKey(key);
+            document.getElementById('apiKeyPromptInline')?.remove();
+            if (window._apiKeyResolve) { window._apiKeyResolve(key); window._apiKeyResolve = null; }
+        };
 
         function initializeApp() {
             restoreFromLocalStorage();
